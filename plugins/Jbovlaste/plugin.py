@@ -58,7 +58,8 @@ class Jbovlaste(callbacks.Plugin):
     definition = wrap(definition, ['text'])
 
     def notes(self, irc, msg, args, valsi):
-        irc.reply(self.tree.find('//valsi[@word="%s"]/notes' % valsi).text)
+        note = self.tree.find('//valsi[@word="%s"]/notes' % valsi).text
+        irc.reply(re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', note))
     notes = wrap(notes, ['text'])
 
     def gloss(self, irc, msg, args, valsi):
