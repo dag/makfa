@@ -49,26 +49,37 @@ class Jbovlaste(callbacks.Plugin):
                                 "/xml-export.html")
 
     def selmaho(self, irc, msg, args, valsi):
-        irc.reply(self.tree.find('//valsi[@word="%s"]/selmaho' % valsi).text)
+        try:
+            tmp = self.tree.find('//valsi[@word="%s"]/selmaho' % valsi).text
+            irc.reply('\x02'*2+tmp)
+        except:
+            irc.reply('\x02'*2)
     selmaho = wrap(selmaho, ['text'])
 
     def rafsi(self, irc, msg, args, valsi):
         lst = self.tree.xpath('//valsi[@word="%s"]/rafsi/text()' % valsi)
-        irc.reply(', '.join(lst))
+        irc.reply('\x02'*2+', '.join(lst))
     rafsi = wrap(rafsi, ['text'])
 
     def definition(self, irc, msg, args, valsi):
         defn = self.tree.find('//valsi[@word="%s"]/definition' % valsi).text
-        irc.reply(re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', defn))
+        irc.reply('\x02'*2+re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', defn))
     definition = wrap(definition, ['text'])
 
     def notes(self, irc, msg, args, valsi):
-        note = self.tree.find('//valsi[@word="%s"]/notes' % valsi).text
-        irc.reply(re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', note))
+        try:
+            note = self.tree.find('//valsi[@word="%s"]/notes' % valsi).text
+            irc.reply('\x02'*2+re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', note))
+        except:
+            irc.reply('\x02'*2)
     notes = wrap(notes, ['text'])
 
     def gloss(self, irc, msg, args, valsi):
-        irc.reply(self.tree.find('//nlword[@valsi="%s"]' % valsi).get("word"))
+        try:
+            tmp = self.tree.find('//nlword[@valsi="%s"]' % valsi).get("word")
+            irc.reply('\x02'*2+tmp)
+        except:
+            irc.reply('\x02'*2)
     gloss = wrap(gloss, ['text'])
 
     def find(self, irc, msg, args, opts, valsi):
