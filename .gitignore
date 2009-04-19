@@ -1,0 +1,8 @@
+*.pyc
+makfa.conf.bak
+backup/
+conf/users.conf
+conf/userdata.conf
+data/
+logs/
+tmp/
