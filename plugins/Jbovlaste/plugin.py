@@ -52,6 +52,11 @@ class Jbovlaste(callbacks.Plugin):
         irc.reply(self.tree.find('//valsi[@word="%s"]/selmaho' % valsi).text)
     selmaho = wrap(selmaho, ['text'])
 
+    def rafsi(self, irc, msg, args, valsi):
+        lst = self.tree.xpath('//valsi[@word="%s"]/rafsi/text()' % valsi)
+        irc.reply(', '.join(lst))
+    rafsi = wrap(rafsi, ['text'])
+
     def definition(self, irc, msg, args, valsi):
         defn = self.tree.find('//valsi[@word="%s"]/definition' % valsi).text
         irc.reply(re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', defn))
@@ -66,9 +71,23 @@ class Jbovlaste(callbacks.Plugin):
         irc.reply(self.tree.find('//nlword[@valsi="%s"]' % valsi).get("word"))
     gloss = wrap(gloss, ['text'])
 
-    def find(self, irc, msg, args, valsi):
-        irc.reply(self.tree.find('//nlword[@word="%s"]' % valsi).get("valsi"))
-    find = wrap(find, ['text'])
+    def find(self, irc, msg, args, opts, valsi):
+        if ('rafsi', True) in opts:
+            all = self.tree.findall('//valsi/rafsi')
+            for afx in all:
+                if afx.text == valsi:
+                    irc.reply(afx.getparent().get("word"))
+        elif ('selmaho', True) in opts:
+            all = self.tree.findall('//valsi/selmaho')
+            lst = []
+            for semao in all:
+                if semao.text == valsi.upper():
+                    lst.append(semao.getparent().get("word"))
+            irc.reply(', '.join(lst))
+        else:
+            valsi = self.tree.find('//nlword[@word="%s"]' % valsi).get("valsi")
+            irc.reply(valsi)
+    find = wrap(find, [getopts({'rafsi': '', 'selmaho': ''}), 'text'])
 
 
 Class = Jbovlaste
