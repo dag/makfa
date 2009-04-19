@@ -35,6 +35,7 @@ import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 from lxml import etree
 from os import path
+import re
 
 
 class Jbovlaste(callbacks.Plugin):
@@ -52,7 +53,8 @@ class Jbovlaste(callbacks.Plugin):
     selmaho = wrap(selmaho, ['text'])
 
     def definition(self, irc, msg, args, valsi):
-        irc.reply(self.tree.find('//valsi[@word="%s"]/definition' % valsi).text)
+        defn = self.tree.find('//valsi[@word="%s"]/definition' % valsi).text
+        irc.reply(re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', defn))
     definition = wrap(definition, ['text'])
 
     def notes(self, irc, msg, args, valsi):
