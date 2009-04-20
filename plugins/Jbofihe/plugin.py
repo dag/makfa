@@ -51,6 +51,10 @@ class Jbofihe(callbacks.Plugin):
         irc.reply(result)
     jbofihe = wrap(jbofihe, ['text'])
 
+    def glossy(self, irc, msg, args, text):
+        irc.reply(' '.join(re.findall(r'/(.+?)/\W', text)))
+    glossy = wrap(glossy, ['text'])
+
     def cmafihe(self, irc, msg, args, text):
         pipe = Popen('cmafihe', stdin=PIPE, stdout=PIPE)
         irc.reply(rstrip(pipe.communicate(text)[0]))
