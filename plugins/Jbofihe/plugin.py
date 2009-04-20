@@ -35,6 +35,7 @@ import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 from subprocess import Popen, PIPE
 from string import rstrip
+import re
 
 
 class Jbofihe(callbacks.Plugin):
@@ -54,6 +55,17 @@ class Jbofihe(callbacks.Plugin):
         pipe = Popen('cmafihe', stdin=PIPE, stdout=PIPE)
         irc.reply(rstrip(pipe.communicate(text)[0]))
     cmafihe = wrap(cmafihe, ['text'])
+
+    def jvocuhadju(self, irc, msg, args, words):
+        arglist = ['jvocuhadju']
+        arglist.extend(words.split())
+        result = Popen(arglist, stdin=PIPE, stdout=PIPE).communicate()[0]
+        lujvo = re.findall(r'^ *\d+ (.+)', result, re.MULTILINE)
+        if len(lujvo) > 0:
+            irc.reply(', '.join(map(lambda e: "{%s}" % e, lujvo)))
+        else:
+            irc.reply('no suggestions')
+    jvocuhadju = wrap(jvocuhadju, ['text'])
 
 
 Class = Jbofihe
