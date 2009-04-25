@@ -168,7 +168,7 @@ class Jbovlaste(callbacks.Plugin):
         if valsi in self.vlaste.tree:
             lst = self.vlaste.tree[valsi]['rafsi']
             if len(lst) > 0:
-                irc.reply(', '.join(map(lambda r: "-%s-" % r, lst)))
+                irc.reply(', '.join(lst))
             else:
                 irc.reply("no rafsi")
         else:
