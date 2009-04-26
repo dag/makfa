@@ -65,7 +65,9 @@ class VlaSte():
                     self.tree[word]['notes'] = note
         for valsi in tree.findall('//nlword'):
             word = valsi.get('valsi')
-            self.tree[word]['glosses'].append(valsi.get('word'))
+            place = valsi.get('place')
+            if place == '1' or place == None:
+                self.tree[word]['glosses'].append(valsi.get('word'))
 
     def find(self, type=None, rafsi=None, selmaho=None, definition=None,
              notes=None, gloss=None, valsi=None, regexp=False):
