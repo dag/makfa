@@ -60,6 +60,11 @@ class Jbofihe(callbacks.Plugin):
         irc.reply(rstrip(pipe.communicate(text)[0]))
     cmafihe = wrap(cmafihe, ['text'])
 
+    def vlatai(self, irc, msg, args, text):
+        pipe = Popen(['vlatai', text], stdout=PIPE)
+        irc.reply(re.findall(r': (.+?) :', pipe.communicate()[0])[0])
+    vlatai = wrap(vlatai, ['text'])
+
     def jvocuhadju(self, irc, msg, args, words):
         arglist = ['jvocuhadju']
         arglist.extend(words.split())
