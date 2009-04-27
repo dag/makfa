@@ -41,6 +41,15 @@ import re
 class VlaSte():
 
     def __init__(self):
+        def prettyplace(defn):
+            defn = re.sub(r'\$x_\{?(\d+)\}?\$', r'x\1', defn)
+            defn = re.sub(r'\$.+?\$', 'x$', defn)
+            x = 0
+            for c in range(0, len(defn)):
+                if defn[c] == '$':
+                    x = x + 1
+                    defn = defn.replace('$', str(x), 1)
+            return defn
         self.tree = {}
         tree = etree.parse(path.dirname(path.abspath(__file__)) +
                            "/xml-export.html")
@@ -58,11 +67,9 @@ class VlaSte():
                 elif child.tag == 'selmaho':
                     self.tree[word]['selmaho'] = child.text
                 elif child.tag == 'definition':
-                    defn = re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', child.text)
-                    self.tree[word]['definition'] = defn
+                    self.tree[word]['definition'] = prettyplace(child.text)
                 elif child.tag == 'notes':
-                    note = re.sub(r'\$[a-z]+_\{?(\d+)\}?\$', r'x\1', child.text)
-                    self.tree[word]['notes'] = note
+                    self.tree[word]['notes'] = prettyplace(child.text)
         for valsi in tree.findall('//nlword'):
             word = valsi.get('valsi')
             place = valsi.get('place')
