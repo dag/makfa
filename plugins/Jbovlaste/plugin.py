@@ -271,15 +271,15 @@ class Jbovlaste(callbacks.Plugin):
                                             definition=definition, notes=notes,
                                             gloss=query, valsi=valsi,
                                             regexp=regexp))
-            results.extend(self.vlaste.find(type=type, rafsi=query,
-                                            selmaho=selmaho,
-                                            definition=definition, notes=notes,
-                                            gloss=gloss, valsi=valsi,
-                                            regexp=regexp))
             results.extend(self.vlaste.find(type=type, rafsi=rafsi,
                                             selmaho=selmaho,
                                             definition=definition, notes=notes,
                                             gloss=gloss, valsi=query,
+                                            regexp=regexp))
+            results.extend(self.vlaste.find(type=type, rafsi=query,
+                                            selmaho=selmaho,
+                                            definition=definition, notes=notes,
+                                            gloss=gloss, valsi=valsi,
                                             regexp=regexp))
             results.extend(self.vlaste.find(type=type, rafsi=rafsi,
                                             selmaho=query,
@@ -296,13 +296,15 @@ class Jbovlaste(callbacks.Plugin):
                                             definition=definition, notes=query,
                                             gloss=gloss, valsi=valsi,
                                             regexp=regexp))
+            dupes = results
+            results = []
+            [results.append(i) for i in dupes if not results.count(i)]
         else:
             results = self.vlaste.find(type=type, rafsi=rafsi, selmaho=selmaho,
                                        definition=definition, notes=notes, gloss=gloss,
                                        valsi=valsi, regexp=regexp)
-        results = set(results)
         if irc.nested:
-            irc.reply(results.pop())
+            irc.reply(results[0])
         else:
             rep = []
             for res in results:
