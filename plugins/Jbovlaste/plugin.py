@@ -86,13 +86,14 @@ class VlaSte():
                     candidate = type == data['type']
                     if candidate == False:
                         continue
-                for raf in rafsi:
-                    candidate = raf in data['rafsi']
+                if rafsi != []:
+                    for raf in rafsi:
+                        candidate = raf in data['rafsi']
+                        if candidate == True:
+                            results.append(word)
+                            continue
                     if candidate == True:
-                        results.append(word)
                         continue
-                if candidate == True:
-                    continue
                 if selmaho != None:
                     candidate = selmaho.upper() == data['selmaho'].upper()
                     if candidate == False:
@@ -101,13 +102,14 @@ class VlaSte():
                     candidate = gloss in data['glosses']
                     if candidate == False:
                         continue
-                for vla in valsi:
-                    candidate = vla == word
+                if valsi != []:
+                    for vla in valsi:
+                        candidate = vla == word
+                        if candidate == True:
+                            results.append(word)
+                            continue
                     if candidate == True:
-                        results.append(word)
                         continue
-                if candidate == True:
-                    continue
             else:
                 if type != None:
                     candidate = re.search(type, data['type']) != None
@@ -314,7 +316,10 @@ class Jbovlaste(callbacks.Plugin):
                                        definition=definition, notes=notes,
                                        gloss=gloss, valsi=valsi, regexp=regexp)
         if irc.nested:
-            irc.reply(' '.join(results[0:limit]))
+            if len(results) > 0:
+                irc.reply(' '.join(results[0:limit]))
+            else:
+                irc.reply('--no-results')
         else:
             rep = []
             for res in results:
@@ -339,12 +344,12 @@ class Jbovlaste(callbacks.Plugin):
                                 'limit': 'positiveInt', 'regexp': ''}),
                        optional('text')])
 
-    def show(self, irc, msg, args, entries):
+    def show(self, irc, msg, args, opts, entries):
         """<entry> [entry...]
 
         Display up to five jbovlaste entries.
         """
-        if entries == None:
+        if entries == None or ('no-results', True) in opts:
             irc.reply('no results')
         else:
             for valsi in entries.split()[0:5]:
@@ -368,7 +373,7 @@ class Jbovlaste(callbacks.Plugin):
                     irc.reply(res.encode('utf-8'))
                 else:
                     irc.reply('no entry for {%s}' % valsi)
-    show = wrap(show, [optional('text')])
+    show = wrap(show, [getopts({'no-results': ''}), optional('text')])
 
 
 Class = Jbovlaste
