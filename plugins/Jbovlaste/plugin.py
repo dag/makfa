@@ -76,8 +76,8 @@ class VlaSte():
             if place == '1' or place == None:
                 self.tree[word]['glosses'].append(valsi.get('word'))
 
-    def find(self, type=None, rafsi=None, selmaho=None, definition=None,
-             notes=None, gloss=None, valsi=None, regexp=False):
+    def find(self, type=None, rafsi=[], selmaho=None, definition=None,
+             notes=None, gloss=None, valsi=[], regexp=False):
         results = []
         for word, data in self.tree.iteritems():
             candidate = False
@@ -86,10 +86,13 @@ class VlaSte():
                     candidate = type == data['type']
                     if candidate == False:
                         continue
-                if rafsi != None:
-                    candidate = rafsi in data['rafsi']
-                    if candidate == False:
+                for raf in rafsi:
+                    candidate = raf in data['rafsi']
+                    if candidate == True:
+                        results.append(word)
                         continue
+                if candidate == True:
+                    continue
                 if selmaho != None:
                     candidate = selmaho.upper() == data['selmaho'].upper()
                     if candidate == False:
@@ -98,19 +101,22 @@ class VlaSte():
                     candidate = gloss in data['glosses']
                     if candidate == False:
                         continue
-                if valsi != None:
-                    candidate = valsi == word
-                    if candidate == False:
+                for vla in valsi:
+                    candidate = vla == word
+                    if candidate == True:
+                        results.append(word)
                         continue
+                if candidate == True:
+                    continue
             else:
                 if type != None:
                     candidate = re.search(type, data['type']) != None
                     if candidate == False:
                         continue
-                if rafsi != None:
+                for raf in rafsi:
                     candidate = False
                     for a in data['rafsi']:
-                        if re.search(rafsi, a) != None:
+                        if re.search(raf, a) != None:
                             candidate = True
                             break
                     if candidate == False:
@@ -127,8 +133,8 @@ class VlaSte():
                             break
                     if candidate == False:
                         continue
-                if valsi != None:
-                    candidate = re.search(valsi, word, re.IGNORECASE) != None
+                for vla in valsi:
+                    candidate = re.search(vla, word, re.IGNORECASE) != None
                     if candidate == False:
                         continue
             if definition != None:
@@ -245,7 +251,9 @@ class Jbovlaste(callbacks.Plugin):
 
         Search for entries in jbovlaste.
         """
-        type = rafsi = selmaho = definition = notes = gloss = valsi = None
+        type = selmaho = definition = notes = gloss = None
+        rafsi = valsi = []
+        limit = 1
         regexp = False
         for (key, val) in opts:
             if key == 'type':
@@ -262,6 +270,8 @@ class Jbovlaste(callbacks.Plugin):
                 gloss = val
             elif key == 'valsi':
                 valsi = val
+            elif key == 'limit':
+                limit = val
             elif key == 'regexp':
                 regexp = val
         results = []
@@ -301,10 +311,10 @@ class Jbovlaste(callbacks.Plugin):
             [results.append(i) for i in dupes if not results.count(i)]
         else:
             results = self.vlaste.find(type=type, rafsi=rafsi, selmaho=selmaho,
-                                       definition=definition, notes=notes, gloss=gloss,
-                                       valsi=valsi, regexp=regexp)
+                                       definition=definition, notes=notes,
+                                       gloss=gloss, valsi=valsi, regexp=regexp)
         if irc.nested:
-            irc.reply(results[0])
+            irc.reply(' '.join(results[0:limit]))
         else:
             rep = []
             for res in results:
@@ -322,37 +332,42 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply('%d %s: %s' % (len(rep), plural, joind))
             else:
                 irc.reply('no entries')
-    find = wrap(find, [getopts({'type': 'text', 'rafsi': 'text',
+    find = wrap(find, [getopts({'type': 'text', 'rafsi': commalist('text'),
                                 'selmaho': 'text', 'definition': 'text',
                                 'notes': 'text', 'gloss': 'text',
-                                'valsi': 'text', 'regexp': ''}),
+                                'valsi': commalist('text'),
+                                'limit': 'positiveInt', 'regexp': ''}),
                        optional('text')])
 
-    def show(self, irc, msg, args, valsi):
-        """<entry>
+    def show(self, irc, msg, args, entries):
+        """<entry> [entry...]
 
-        Display a jbovlaste entry.
+        Display up to five jbovlaste entries.
         """
-        if valsi == None:
+        if entries == None:
             irc.reply('no results')
-        elif valsi in self.vlaste.tree:
-            entry = self.vlaste.tree[valsi]
-            res = '%s {%s}' % (entry['type'], valsi)
-            if len(entry['glosses']) > 0:
-                glo = ', '.join(map(lambda a: '"%s"' % a, entry['glosses']))
-                res = '%s glossing to %s' % (res, glo)
-            if entry['selmaho'] != '':
-                res = "%s of selma'o %s" % (res, entry['selmaho'])
-            if len(entry['rafsi']) > 0:
-                afx = ', '.join(map(lambda a: '-%s-' % a, entry['rafsi']))
-                res = '%s with rafsi %s' % (res, afx)
-            if entry['definition'] != '':
-                res = '%s   %s' % (res, entry['definition'])
-            if entry['notes'] != '':
-                res = '%s   Notes: %s' % (res, entry['notes'])
-            irc.reply(res.encode('utf-8'))
         else:
-            irc.reply('no entry')
+            for valsi in entries.split()[0:5]:
+                if valsi in self.vlaste.tree:
+                    entry = self.vlaste.tree[valsi]
+                    res = '%s {%s}' % (entry['type'], valsi)
+                    if len(entry['glosses']) > 0:
+                        glo = ', '.join(map(lambda a: '"%s"' % a,
+                                            entry['glosses']))
+                        res = '%s glossing to %s' % (res, glo)
+                    if entry['selmaho'] != '':
+                        res = "%s of selma'o %s" % (res, entry['selmaho'])
+                    if len(entry['rafsi']) > 0:
+                        afx = ', '.join(map(lambda a: '-%s-' % a,
+                                            entry['rafsi']))
+                        res = '%s with rafsi %s' % (res, afx)
+                    if entry['definition'] != '':
+                        res = '%s   %s' % (res, entry['definition'])
+                    if entry['notes'] != '':
+                        res = '%s   Notes: %s' % (res, entry['notes'])
+                    irc.reply(res.encode('utf-8'))
+                else:
+                    irc.reply('no entry for {%s}' % valsi)
     show = wrap(show, [optional('text')])
 
 
