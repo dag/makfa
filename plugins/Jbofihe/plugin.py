@@ -43,6 +43,11 @@ class Jbofihe(callbacks.Plugin):
     This should describe *how* to use this plugin."""
 
     def jbofihe(self, irc, msg, args, text):
+        """<text>
+        
+        Analyze text with jbofihe, falls back on cmafihe for
+        ungrammatical text.
+        """
         pipe = Popen(['jbofihe', '-x'], stdin=PIPE, stdout=PIPE)
         result = rstrip(pipe.communicate(text)[0])
         if pipe.returncode > 0:
@@ -52,15 +57,27 @@ class Jbofihe(callbacks.Plugin):
     jbofihe = wrap(jbofihe, ['text'])
 
     def glossy(self, irc, msg, args, text):
+        """<jbofihe output>
+        
+        Strip jbofihe output from everything but glosses.
+        """
         irc.reply(' '.join(re.findall(r'/(.+?)/\W', text)))
     glossy = wrap(glossy, ['text'])
 
     def cmafihe(self, irc, msg, args, text):
+        """<text>
+        
+        Analyze text with cmafihe.
+        """
         pipe = Popen('cmafihe', stdin=PIPE, stdout=PIPE)
         irc.reply(rstrip(pipe.communicate(text)[0]))
     cmafihe = wrap(cmafihe, ['text'])
 
     def vlatai(self, irc, msg, args, text):
+        """<word> [word...]
+        
+        Analyze the morphology of words.
+        """
         rep = []
         for words in text.split():
             pipe = Popen(['vlatai', words], stdout=PIPE)
@@ -77,6 +94,10 @@ class Jbofihe(callbacks.Plugin):
     vlatai = wrap(vlatai, ['text'])
 
     def jvocuhadju(self, irc, msg, args, words):
+        """<tanru>
+        
+        Create lujvo from tanru.
+        """
         arglist = ['jvocuhadju']
         arglist.extend(words.split())
         result = Popen(arglist, stdin=PIPE, stdout=PIPE).communicate()[0]
