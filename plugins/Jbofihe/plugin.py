@@ -61,8 +61,19 @@ class Jbofihe(callbacks.Plugin):
     cmafihe = wrap(cmafihe, ['text'])
 
     def vlatai(self, irc, msg, args, text):
-        pipe = Popen(['vlatai', text], stdout=PIPE)
-        irc.reply(re.findall(r': (.+?) :', pipe.communicate()[0])[0])
+        rep = []
+        for words in text.split():
+            pipe = Popen(['vlatai', words], stdout=PIPE)
+            res = re.findall(r': (.+?) : (.+)$', pipe.communicate()[0])[0]
+            if ' ' in res[1].lstrip():
+                for word in res[1].split():
+                    pipe = Popen(['vlatai', word], stdout=PIPE)
+                    res = re.findall(r': (.+?) :', pipe.communicate()[0])[0]
+                    rep.append('{%s} is a %s' % (word, res.replace('(s)', '')))
+            else:
+                rep.append('{%s} is a %s' % (res[1].lstrip(),
+                                             res[0].replace('(s)', '')))
+        irc.reply('; '.join(rep))
     vlatai = wrap(vlatai, ['text'])
 
     def jvocuhadju(self, irc, msg, args, words):
