@@ -82,7 +82,10 @@ class Jbofihe(callbacks.Plugin):
         result = Popen(arglist, stdin=PIPE, stdout=PIPE).communicate()[0]
         lujvo = re.findall(r'^ *\d+ (.+)', result, re.MULTILINE)
         if len(lujvo) > 0:
-            irc.reply(', '.join(map(lambda e: "{%s}" % e, lujvo)))
+            if irc.nested:
+                irc.reply(lujvo[0])
+            else:
+                irc.reply(', '.join(map(lambda e: "{%s}" % e, lujvo)))
         else:
             irc.reply('no suggestions')
     jvocuhadju = wrap(jvocuhadju, ['text'])
