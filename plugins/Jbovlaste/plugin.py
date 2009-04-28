@@ -286,9 +286,9 @@ class Jbovlaste(callbacks.Plugin):
             results.extend(self.vlaste.find(type=type, rafsi=rafsi,
                                             selmaho=selmaho,
                                             definition=definition, notes=notes,
-                                            gloss=gloss, valsi=query,
+                                            gloss=gloss, valsi=[query],
                                             regexp=regexp))
-            results.extend(self.vlaste.find(type=type, rafsi=query,
+            results.extend(self.vlaste.find(type=type, rafsi=[query],
                                             selmaho=selmaho,
                                             definition=definition, notes=notes,
                                             gloss=gloss, valsi=valsi,
