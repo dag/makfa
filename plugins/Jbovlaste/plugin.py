@@ -247,7 +247,7 @@ class Jbovlaste(callbacks.Plugin):
     type = wrap(type, ['text'])
 
     def find(self, irc, msg, args, opts, query):
-        """[--{type,rafsi,selmaho,definition,notes,gloss,valsi} <value>] [--regexp] [query]
+        """[--{type,selmaho,definition,notes,gloss} <value>] [--{rafsi,valsi} <commalist>] [--limit <value>] [--regexp] [query]
 
         Search for entries in jbovlaste.
         """
