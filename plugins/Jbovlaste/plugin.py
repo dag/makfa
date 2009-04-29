@@ -36,6 +36,7 @@ import supybot.callbacks as callbacks
 from lxml import etree
 from os import path
 import re
+import random
 
 
 class VlaSte():
@@ -249,12 +250,13 @@ class Jbovlaste(callbacks.Plugin):
     type = wrap(type, ['text'])
 
     def find(self, irc, msg, args, opts, query):
-        """[--{type,selmaho,definition,notes,gloss} <value>] [--{rafsi,valsi} <commalist>] [--limit <value>] [--regexp] [query]
+        """[--{type,selmaho,definition,notes,gloss} <value>] [--{rafsi,valsi} <commalist>] [--shuffle] [--limit <value>] [--regexp] [query]
 
         Search for entries in jbovlaste.
         """
         type = selmaho = definition = notes = gloss = None
         rafsi = valsi = []
+        shuffle = False
         limit = 1
         regexp = False
         for (key, val) in opts:
@@ -272,6 +274,8 @@ class Jbovlaste(callbacks.Plugin):
                 gloss = val
             elif key == 'valsi':
                 valsi = val
+            elif key == 'shuffle':
+                shuffle = val
             elif key == 'limit':
                 limit = val
             elif key == 'regexp':
@@ -315,6 +319,8 @@ class Jbovlaste(callbacks.Plugin):
             results = self.vlaste.find(type=type, rafsi=rafsi, selmaho=selmaho,
                                        definition=definition, notes=notes,
                                        gloss=gloss, valsi=valsi, regexp=regexp)
+        if shuffle:
+            random.shuffle(results)
         if irc.nested:
             if len(results) > 0:
                 irc.reply(' '.join(results[0:limit]))
@@ -340,7 +346,7 @@ class Jbovlaste(callbacks.Plugin):
     find = wrap(find, [getopts({'type': 'text', 'rafsi': commalist('text'),
                                 'selmaho': 'text', 'definition': 'text',
                                 'notes': 'text', 'gloss': 'text',
-                                'valsi': commalist('text'),
+                                'valsi': commalist('text'), 'shuffle': '',
                                 'limit': 'positiveInt', 'regexp': ''}),
                        optional('text')])
 
