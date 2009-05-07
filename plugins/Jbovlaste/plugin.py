@@ -43,14 +43,10 @@ class VlaSte():
 
     def __init__(self):
         def prettyplace(defn):
-            defn = re.sub(r'\$x_\{?(\d+)\}?\$', r'x\1', defn)
-            defn = re.sub(r'\$.+?\$', 'x$', defn)
-            x = 0
-            for c in range(0, len(defn)):
-                if defn[c] == '$':
-                    x = x + 1
-                    defn = defn.replace('$', str(x), 1)
-            return defn
+            def f(m):
+                res = m.group(1).replace('_', '')
+                return res.replace('{', '').replace('}', '')
+            return re.sub(r'\$(.+?)\$', f, defn)
         self.tree = {}
         tree = etree.parse(path.dirname(path.abspath(__file__)) +
                            "/xml-export.html")
