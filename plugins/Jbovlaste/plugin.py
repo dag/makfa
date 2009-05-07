@@ -48,10 +48,12 @@ class VlaSte():
                 return res.replace('{', '').replace('}', '')
             return re.sub(r'\$(.+?)\$', f, defn)
         self.tree = {}
+        self.words = []
         tree = etree.parse(path.dirname(path.abspath(__file__)) +
                            "/xml-export.html")
-        for valsi in tree.findall('//valsi'):
+        def save(valsi):
             word = valsi.get('word')
+            self.words.append(word)
             self.tree[word] = {'type': valsi.get('type'),
                                'rafsi': [],
                                'selmaho': '',
@@ -67,87 +69,125 @@ class VlaSte():
                     self.tree[word]['definition'] = prettyplace(child.text)
                 elif child.tag == 'notes':
                     self.tree[word]['notes'] = prettyplace(child.text)
+        for valsi in tree.findall('//valsi[@type="gismu"]'): save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmavo"]'): save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmavo cluster"]'):
+            save(valsi)
+        for valsi in tree.findall('//valsi[@type="lujvo"]'): save(valsi)
+        for valsi in tree.findall('//valsi[@type="fu\'ivla"]'): save(valsi)
+        for valsi in tree.findall('//valsi[@type="experimental gismu"]'):
+            save(valsi)
+        for valsi in tree.findall('//valsi[@type="experimental cmavo"]'):
+            save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmene"]'): save(valsi)
         for valsi in tree.findall('//nlword'):
             word = valsi.get('valsi')
             place = valsi.get('place')
             if place == '1' or place == None:
                 self.tree[word]['glosses'].append(valsi.get('word'))
 
-    def find(self, type=None, rafsi=[], selmaho=None, definition=None,
-             notes=None, gloss=None, valsi=[], regexp=False):
-        results = []
-        for word, data in self.tree.iteritems():
-            candidate = False
-            if regexp == False:
-                if type != None:
-                    candidate = type == data['type']
-                    if candidate == False:
-                        continue
-                if rafsi != []:
-                    for raf in rafsi:
-                        candidate = raf in data['rafsi']
-                        if candidate == True:
-                            results.append(word)
-                            continue
-                    if candidate == True:
-                        continue
-                if selmaho != None:
-                    candidate = selmaho.upper() == data['selmaho'].upper()
-                    if candidate == False:
-                        continue
-                if gloss != None:
-                    candidate = gloss in data['glosses']
-                    if candidate == False:
-                        continue
-                if valsi != []:
-                    for vla in valsi:
-                        candidate = vla == word
-                        if candidate == True:
-                            results.append(word)
-                            continue
-                    if candidate == True:
-                        continue
-            else:
-                if type != None:
-                    candidate = re.search(type, data['type']) != None
-                    if candidate == False:
-                        continue
-                for raf in rafsi:
-                    candidate = False
-                    for a in data['rafsi']:
-                        if re.search(raf, a) != None:
-                            candidate = True
+    def find_type(self, inlist, type, regexp):
+        if not type: return inlist
+        outlist = []
+        for word in inlist:
+            data = self.tree[word]['type']
+            if regexp and re.search(type, data, re.IGNORECASE) or \
+               type.upper() == data.upper():
+                outlist.append(word)
+        return outlist
+
+    def find_valsi(self, inlist, valsi, regexp):
+        if not valsi: return inlist
+        outlist = []
+        if regexp:
+            for word in inlist:
+                for item in valsi:
+                    if re.search(item, word, re.IGNORECASE):
+                        outlist.append(word)
+                        break
+        else:
+            for word in inlist:
+                if word in valsi:
+                    outlist.append(word)
+        return outlist
+
+    def find_gloss(self, inlist, gloss, regexp):
+        if not gloss: return inlist
+        outlist = []
+        if regexp:
+            for word in inlist:
+                for item in self.tree[word]['glosses']:
+                    if re.search(gloss, item, re.IGNORECASE):
+                        outlist.append(word)
+                        break
+        else:
+            for word in inlist:
+                glosses = self.tree[word]['glosses']
+                lowered = [item.lower() for item in glosses]
+                if gloss.lower() in lowered:
+                    outlist.append(word)
+        return outlist
+
+    def find_rafsi(self, inlist, rafsi, regexp):
+        if not rafsi: return inlist
+        outlist = []
+        if regexp:
+            for word in inlist:
+                for item in rafsi:
+                    added = False
+                    for raf in self.tree[word]['rafsi']:
+                        if re.search(item, raf, re.IGNORECASE):
+                            added = True
+                            outlist.append(word)
                             break
-                    if candidate == False:
+                    if added:
                         continue
-                if selmaho != None:
-                    candidate = re.search(selmaho, data['selmaho'],
-                                          re.IGNORECASE) != None
-                    if candidate == False:
-                        continue
-                if gloss != None:
-                    for g in data['glosses']:
-                        if re.search(gloss, g) != None:
-                            candidate = True
-                            break
-                    if candidate == False:
-                        continue
-                for vla in valsi:
-                    candidate = re.search(vla, word, re.IGNORECASE) != None
-                    if candidate == False:
-                        continue
-            if definition != None:
-                candidate = re.search(definition, data['definition'],
-                                      re.IGNORECASE) != None
-                if candidate == False:
-                    continue
-            if notes != None:
-                candidate = re.search(notes, data['notes'],
-                                      re.IGNORECASE) != None
-                if candidate == False:
-                    continue
-            if candidate == True:
-                results.append(word)
+        else:
+            for word in inlist:
+                for item in rafsi:
+                    if item in self.tree[word]['rafsi']:
+                        outlist.append(word)
+                        break
+        return outlist
+
+    def find_selmaho(self, inlist, selmaho, regexp):
+        if not selmaho: return inlist
+        outlist = []
+        for word in inlist:
+            data = self.tree[word]['selmaho']
+            if regexp and re.search(selmaho, data, re.IGNORECASE) or \
+               selmaho.upper() == data.upper():
+                outlist.append(word)
+        return outlist
+
+    def find_definition(self, inlist, definition):
+        if not definition: return inlist
+        outlist = []
+        for word in inlist:
+            data = self.tree[word]
+            if re.search(definition, data['definition'], re.IGNORECASE):
+                outlist.append(word)
+        return outlist
+
+    def find_notes(self, inlist, notes):
+        if not notes: return inlist
+        outlist = []
+        for word in inlist:
+            data = self.tree[word]
+            if re.search(notes, data['notes'], re.IGNORECASE):
+                outlist.append(word)
+        return outlist
+
+    def find(self, type=None, valsi=[], gloss=None, rafsi=[],
+              selmaho=None, definition=None, notes=None, regexp=False):
+        results = self.words
+        results = self.find_type(results, type, regexp)
+        results = self.find_valsi(results, valsi, regexp)
+        results = self.find_gloss(results, gloss, regexp)
+        results = self.find_rafsi(results, rafsi, regexp)
+        results = self.find_selmaho(results, selmaho, regexp)
+        results = self.find_definition(results, definition)
+        results = self.find_notes(results, notes)
         return results
 
 
