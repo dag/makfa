@@ -39,6 +39,40 @@ import re
 import random
 
 
+class Damerau():
+
+    def __init__(self, like, lst):
+        self.distances = {}
+        for item in lst:
+            self.distances[item] = self.distance(like, item)
+
+    def cmp(self, s1, s2):
+        d1 = self.distances[s1]
+        d2 = self.distances[s2]
+        if d1 > d2:
+            return 1
+        elif d1 == d2:
+            return 0
+        else:
+            return -1
+
+    # http://mwh.geek.nz/2009/04/26/python-damerau-levenshtein-distance/
+    def distance(self, seq1, seq2):
+        oneago = None
+        thisrow = range(1, len(seq2) + 1) + [0]
+        for x in xrange(len(seq1)):
+            twoago, oneago, thisrow = oneago, thisrow, [0] * len(seq2) + [x + 1]
+            for y in xrange(len(seq2)):
+                delcost = oneago[y] + 1
+                addcost = thisrow[y - 1] + 1
+                subcost = oneago[y - 1] + (seq1[x] != seq2[y])
+                thisrow[y] = min(delcost, addcost, subcost)
+                if (x > 0 and y > 0 and seq1[x] == seq2[y-1]
+                    and seq1[x-1] == seq2[y] and seq1[x] != seq2[y]):
+                    thisrow[y] = min(thisrow[y], twoago[y-2] + 1)
+        return thisrow[len(seq2) - 1]
+
+
 class VlaSte():
 
     def __init__(self):
@@ -286,11 +320,11 @@ class Jbovlaste(callbacks.Plugin):
     type = wrap(type, ['text'])
 
     def find(self, irc, msg, args, opts, query):
-        """[--{type,selmaho,definition,notes,gloss} <value>] [--{rafsi,valsi} <commalist>] [--shuffle] [--limit <value>] [--regexp] [query]
+        """[--{type,selmaho,definition,notes,gloss} <value>] [--{rafsi,valsi} <commalist>] [--shuffle] [--limit <value>] [--regexp] [--like <word>] [query]
 
         Search for entries in jbovlaste.
         """
-        type = selmaho = definition = notes = gloss = None
+        type = selmaho = definition = notes = gloss = like = None
         rafsi = valsi = []
         shuffle = False
         limit = 1
@@ -316,6 +350,8 @@ class Jbovlaste(callbacks.Plugin):
                 limit = val
             elif key == 'regexp':
                 regexp = val
+            elif key == 'like':
+                like = val
         results = []
         if query != None:
             results.extend(self.vlaste.find(type=type, rafsi=rafsi,
@@ -357,6 +393,8 @@ class Jbovlaste(callbacks.Plugin):
                                        gloss=gloss, valsi=valsi, regexp=regexp)
         if shuffle:
             random.shuffle(results)
+        if like:
+            results.sort(Damerau(like, results).cmp)
         if irc.nested:
             if len(results) > 0:
                 irc.reply(' '.join(results[0:limit]))
@@ -364,6 +402,8 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply('--no-results')
         else:
             rep = []
+            if results and limit > 1:
+                results = results[0:limit]
             for res in results:
                 add = '{%s}' % res
                 glo = ', '.join(map(lambda g: '"%s"' % g,
@@ -383,7 +423,8 @@ class Jbovlaste(callbacks.Plugin):
                                 'selmaho': 'text', 'definition': 'text',
                                 'notes': 'text', 'gloss': 'text',
                                 'valsi': commalist('text'), 'shuffle': '',
-                                'limit': 'positiveInt', 'regexp': ''}),
+                                'limit': 'positiveInt', 'regexp': '',
+                                'like': 'text'}),
                        optional('text')])
 
     def show(self, irc, msg, args, opts, entries):
