@@ -138,7 +138,6 @@ class VlaSte():
                 for word in inlist:
                     if re.search(item, word, re.IGNORECASE):
                         outlist.append(word)
-                        break
         else:
             for words in [i.split() for i in valsi]:
                 for word in words:
