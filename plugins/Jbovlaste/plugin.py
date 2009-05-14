@@ -134,15 +134,16 @@ class VlaSte():
         if not valsi: return inlist
         outlist = []
         if regexp:
-            for word in inlist:
-                for item in valsi:
+            for item in valsi:
+                for word in inlist:
                     if re.search(item, word, re.IGNORECASE):
                         outlist.append(word)
                         break
         else:
-            for word in inlist:
-                if word in valsi:
-                    outlist.append(word)
+            for words in [i.split() for i in valsi]:
+                for word in words:
+                    if word in inlist:
+                        outlist.append(word)
         return outlist
 
     def find_gloss(self, inlist, gloss, regexp):
@@ -166,8 +167,8 @@ class VlaSte():
         if not rafsi: return inlist
         outlist = []
         if regexp:
-            for word in inlist:
-                for item in rafsi:
+            for item in rafsi:
+                for word in inlist:
                     added = False
                     for raf in self.tree[word]['rafsi']:
                         if re.search(item, raf, re.IGNORECASE):
@@ -177,11 +178,12 @@ class VlaSte():
                     if added:
                         continue
         else:
-            for word in inlist:
-                for item in rafsi:
-                    if item in self.tree[word]['rafsi']:
-                        outlist.append(word)
-                        break
+            for items in [i.split() for i in rafsi]:
+                for item in items:
+                    for word in inlist:
+                        if item in self.tree[word]['rafsi']:
+                            outlist.append(word)
+                            break
         return outlist
 
     def find_selmaho(self, inlist, selmaho, regexp):
