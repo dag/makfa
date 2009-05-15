@@ -328,7 +328,7 @@ class Jbovlaste(callbacks.Plugin):
         type = selmaho = definition = notes = gloss = like = None
         rafsi = valsi = []
         shuffle = False
-        limit = 1
+        limit = 0
         regexp = False
         for (key, val) in opts:
             if key == 'type':
@@ -398,12 +398,14 @@ class Jbovlaste(callbacks.Plugin):
             results.sort(Damerau(like, results).cmp)
         if irc.nested:
             if len(results) > 0:
+                if limit == 0:
+                    limit = 1
                 irc.reply(' '.join(results[0:limit]))
             else:
                 irc.reply('--no-results')
         else:
             rep = []
-            if results and limit > 1:
+            if results and limit > 0:
                 results = results[0:limit]
             for res in results:
                 add = '{%s}' % res
