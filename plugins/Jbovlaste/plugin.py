@@ -136,7 +136,7 @@ class Jbovlaste(callbacks.Plugin):
         type = selmaho = definition = notes = gloss = like = None
         rafsi = valsi = []
         shuffle = False
-        limit = 0
+        limit = None
         regexp = False
         for (key, val) in opts:
             if key == 'type':
@@ -171,13 +171,14 @@ class Jbovlaste(callbacks.Plugin):
             random.shuffle(results)
         if irc.nested:
             if results:
-                if limit == 0:
-                    limit = 1
-                irc.reply(' '.join(results[0:limit]))
+                if limit is None:
+                    irc.reply(' '.join(results))
+                else:
+                    irc.reply(' '.join(results[0:limit]))
             else:
                 irc.reply('--no-results')
         else:
-            if results and limit:
+            if results and limit > 0:
                 results = results[0:limit]
             if results:
                 rep = '; '.join([unicode(self.db[i]) for i in results])
