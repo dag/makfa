@@ -62,37 +62,20 @@ class Dictionary():
               rafsi=[], selmaho=None, definition=None, notes=None,
               regexp=False, like=None):
         results = []
+        args = {'gloss': gloss, 'valsi': valsi, 'rafsi': rafsi,
+                'selmaho': selmaho, 'definition': definition,
+                'notes': notes, 'regexp': regexp, 'type': type}
         if query:
-            results.extend(self.find(type=type, rafsi=rafsi,
-                                     selmaho=selmaho,
-                                     definition=definition, notes=notes,
-                                     gloss=query, valsi=valsi,
-                                     regexp=regexp))
-            results.extend(self.find(type=type, rafsi=rafsi,
-                                     selmaho=selmaho,
-                                     definition=definition, notes=notes,
-                                     gloss=gloss, valsi=[query],
-                                     regexp=regexp))
-            results.extend(self.find(type=type, rafsi=[query],
-                                     selmaho=selmaho,
-                                     definition=definition, notes=notes,
-                                     gloss=gloss, valsi=valsi,
-                                     regexp=regexp))
-            results.extend(self.find(type=type, rafsi=rafsi,
-                                     selmaho=query,
-                                     definition=definition, notes=notes,
-                                     gloss=gloss, valsi=valsi,
-                                     regexp=regexp))
-            results.extend(self.find(type=type, rafsi=rafsi,
-                                     selmaho=selmaho,
-                                     definition=query, notes=notes,
-                                     gloss=gloss, valsi=valsi,
-                                     regexp=regexp))
-            results.extend(self.find(type=type, rafsi=rafsi,
-                                     selmaho=selmaho,
-                                     definition=definition, notes=query,
-                                     gloss=gloss, valsi=valsi,
-                                     regexp=regexp))
+            listargs = ['valsi', 'rafsi']
+            order = ['gloss', 'valsi', 'rafsi',
+                     'selmaho', 'definition', 'notes']
+            for arg in order:
+                copyarg = dict(args)
+                if arg in listargs:
+                    copyarg[arg] = [query]
+                else:
+                    copyarg[arg] = query
+                results.extend(self.find(**copyarg))
             dupes = results
             results = []
             [results.append(i) for i in dupes if i not in results]
@@ -100,9 +83,7 @@ class Dictionary():
                 results.sort(_Damerau(like, results).cmp)
             return results
         else:
-            return self.find(type=type, rafsi=rafsi, selmaho=selmaho,
-                             definition=definition, notes=notes, like=like,
-                             gloss=gloss, valsi=valsi, regexp=regexp)
+            return self.find(**args)
 
     def _type(self, inlist, type, regexp):
         if not type: return inlist
