@@ -1,0 +1,237 @@
+from lxml import etree
+import re
+
+
+class Entry():
+
+    def __init__(self, valsi, type, rafsi=[], selmaho=None,
+                 definition=None, notes=None, places={}):
+        self.valsi = valsi
+        self.type = type
+        self.rafsi = list(rafsi)
+        self.selmaho = selmaho
+        self.definition = definition
+        self.notes = notes
+        self.places = dict(places)
+
+    def __str__(self):
+        if 1 in self.places:
+            places = ['"%s"' % i[0] for i in self.places[1]]
+            return '{%s} %s' % (self.valsi, ', '.join(places))
+        else:
+            return '{%s}' % self.valsi
+
+    def __repr__(self):
+        return '<%s>' % str(self)
+
+
+class Dictionary():
+
+    def __init__(self, file):
+        self._entries = []
+        self._tree = {}
+        tree = etree.parse(file)
+        for valsi in tree.findall('//valsi[@type="gismu"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmavo"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmavo cluster"]'): 
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="lujvo"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="fu\'ivla"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="experimental gismu"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="experimental cmavo"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//valsi[@type="cmene"]'):
+            self._save(valsi)
+        for valsi in tree.findall('//nlword'):
+            word = valsi.get('valsi')
+            place = int(valsi.get('place') or '1')
+            sense = valsi.get('sense')
+            if place not in self[word].places:
+                self[word].places[place] = []
+            self[word].places[place].append((valsi.get('word'), sense))
+
+    def find(self, type=None, valsi=[], gloss=None, rafsi=[], like=None,
+              selmaho=None, definition=None, notes=None, regexp=False):
+        results = self._entries
+        results = self._type(results, type, regexp)
+        results = self._valsi(results, valsi, regexp)
+        results = self._gloss(results, gloss, regexp)
+        results = self._rafsi(results, rafsi, regexp)
+        results = self._selmaho(results, selmaho, regexp)
+        results = self._definition(results, definition)
+        results = self._notes(results, notes)
+        if like:
+            results.sort(_Damerau(like, results).cmp)
+        return results
+
+    def query(self, query=None, type=None, valsi=[], gloss=None,
+              rafsi=[], selmaho=None, definition=None, notes=None,
+              regexp=False, like=None):
+        results = []
+        if query:
+            results.extend(self.find(type=type, rafsi=rafsi,
+                                     selmaho=selmaho,
+                                     definition=definition, notes=notes,
+                                     gloss=query, valsi=valsi,
+                                     regexp=regexp))
+            results.extend(self.find(type=type, rafsi=rafsi,
+                                     selmaho=selmaho,
+                                     definition=definition, notes=notes,
+                                     gloss=gloss, valsi=[query],
+                                     regexp=regexp))
+            results.extend(self.find(type=type, rafsi=[query],
+                                     selmaho=selmaho,
+                                     definition=definition, notes=notes,
+                                     gloss=gloss, valsi=valsi,
+                                     regexp=regexp))
+            results.extend(self.find(type=type, rafsi=rafsi,
+                                     selmaho=query,
+                                     definition=definition, notes=notes,
+                                     gloss=gloss, valsi=valsi,
+                                     regexp=regexp))
+            results.extend(self.find(type=type, rafsi=rafsi,
+                                     selmaho=selmaho,
+                                     definition=query, notes=notes,
+                                     gloss=gloss, valsi=valsi,
+                                     regexp=regexp))
+            results.extend(self.find(type=type, rafsi=rafsi,
+                                     selmaho=selmaho,
+                                     definition=definition, notes=query,
+                                     gloss=gloss, valsi=valsi,
+                                     regexp=regexp))
+            dupes = results
+            results = []
+            [results.append(i) for i in dupes if not results.count(i)]
+            if like:
+                results.sort(_Damerau(like, results).cmp)
+            return results
+        else:
+            return self.find(type=type, rafsi=rafsi, selmaho=selmaho,
+                             definition=definition, notes=notes, like=like,
+                             gloss=gloss, valsi=valsi, regexp=regexp)
+
+    def _type(self, inlist, type, regexp):
+        if not type: return inlist
+        return [i for i in inlist
+                  if regexp and
+                     re.search(type, self[i].type, re.IGNORECASE) or
+                     type.upper() == self[i].type.upper()]
+
+    def _valsi(self, inlist, valsi, regexp):
+        if not valsi: return inlist
+        outlist = []
+        [[outlist.append(i) for i in inlist
+                            if regexp and
+                               re.search(v, i, re.IGNORECASE) or
+                               v == i] for v in valsi]
+        return outlist
+
+    def _gloss(self, inlist, gloss, regexp):
+        if not gloss: return inlist
+        return [v for v in inlist
+                  if any([regexp and
+                          any([re.search(gloss, i, re.IGNORECASE)
+                               for i in [i[0] for i in i]]) or
+                          gloss in [i[0] for i in i]
+                          for i in self[v].places.values()])]
+
+    def _rafsi(self, inlist, rafsi, regexp):
+        if not rafsi: return inlist
+        outlist = []
+        [[outlist.append(i) for i in inlist
+                            if regexp and
+                               any([re.search(r, a, re.IGNORECASE)
+                                    for a in self[i].rafsi]) or
+                               r in self[i].rafsi] for r in rafsi]
+        return outlist
+
+    def _selmaho(self, inlist, selmaho, regexp):
+        if not selmaho: return inlist
+        return [i for i in inlist 
+                  if self[i].selmaho and (regexp and
+                     re.search(selmaho, self[i].selmaho, re.IGNORECASE) or
+                     selmaho.upper() == self[i].selmaho.upper())]
+
+    def _definition(self, inlist, definition):
+        if not definition: return inlist
+        return [i for i in inlist
+                  if re.search(definition, self[i].definition, re.IGNORECASE)]
+
+    def _notes(self, inlist, notes):
+        if not notes: return inlist
+        return [i for i in inlist
+                  if self[i].notes and
+                     re.search(notes, self[i].notes, re.IGNORECASE)]
+
+    def _prettyplace(self, defn):
+        def f(m):
+            res = m.group(1).replace('_', '')
+            return res.replace('{', '').replace('}', '')
+        return re.sub(r'\$(.+?)\$', f, defn.replace('\n', ' '))
+
+    def _save(self, valsi):
+        word = valsi.get('word')
+        self._entries.append(word)
+        self[word] = Entry(word, valsi.get('type'))
+        for child in valsi.getchildren():
+            if child.tag == 'rafsi':
+                self[word].rafsi.append(child.text)
+            elif child.tag == 'selmaho':
+                self[word].selmaho = child.text
+            elif child.tag == 'definition':
+                self[word].definition = self._prettyplace(child.text)
+            elif child.tag == 'notes':
+                self[word].notes = self._prettyplace(child.text)
+
+    def __getitem__(self, key):
+        return self._tree[key]
+
+    def __setitem__(self, key, value):
+        self._tree[key] = value
+
+    def __iter__(self):
+        return iter(self._entries)
+
+    def __len__(self):
+        return len(self._entries)
+
+class _Damerau():
+
+    def __init__(self, like, lst):
+        self.distances = {}
+        for item in lst:
+            self.distances[item] = self.distance(like, item)
+
+    def cmp(self, s1, s2):
+        d1 = self.distances[s1]
+        d2 = self.distances[s2]
+        if d1 > d2:
+            return 1
+        elif d1 == d2:
+            return 0
+        else:
+            return -1
+
+    # http://mwh.geek.nz/2009/04/26/python-damerau-levenshtein-distance/
+    def distance(self, seq1, seq2):
+        oneago = None
+        thisrow = range(1, len(seq2) + 1) + [0]
+        for x in xrange(len(seq1)):
+            twoago, oneago, thisrow = oneago, thisrow, [0] * len(seq2) + [x + 1]
+            for y in xrange(len(seq2)):
+                delcost = oneago[y] + 1
+                addcost = thisrow[y - 1] + 1
+                subcost = oneago[y - 1] + (seq1[x] != seq2[y])
+                thisrow[y] = min(delcost, addcost, subcost)
+                if (x > 0 and y > 0 and seq1[x] == seq2[y-1]
+                    and seq1[x-1] == seq2[y] and seq1[x] != seq2[y]):
+                    thisrow[y] = min(thisrow[y], twoago[y-2] + 1)
+        return thisrow[len(seq2) - 1]
+
+
+# vim:set shiftwidth=4 softtabstop=4 expandtab textwidth=79:

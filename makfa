@@ -1,0 +1,2 @@
+#!/bin/sh
+PYTHONPATH=lib PATH=$PATH:bin supybot -d makfa.conf
