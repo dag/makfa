@@ -95,7 +95,7 @@ class Dictionary():
                                      regexp=regexp))
             dupes = results
             results = []
-            [results.append(i) for i in dupes if not results.count(i)]
+            [results.append(i) for i in dupes if i not in results]
             if like:
                 results.sort(_Damerau(like, results).cmp)
             return results
@@ -106,10 +106,11 @@ class Dictionary():
 
     def _type(self, inlist, type, regexp):
         if not type: return inlist
+        if not regexp: type = type.lower()
         return [i for i in inlist
                   if regexp and
                      re.search(type, self[i].type, re.IGNORECASE) or
-                     type.upper() == self[i].type.upper()]
+                     type == self[i].type]
 
     def _valsi(self, inlist, valsi, regexp):
         if not valsi: return inlist
@@ -141,10 +142,11 @@ class Dictionary():
 
     def _selmaho(self, inlist, selmaho, regexp):
         if not selmaho: return inlist
+        if not regexp: selmaho = selmaho.upper().replace('H', 'h')
         return [i for i in inlist 
                   if self[i].selmaho and (regexp and
                      re.search(selmaho, self[i].selmaho, re.IGNORECASE) or
-                     selmaho.upper() == self[i].selmaho.upper())]
+                     selmaho == self[i].selmaho)]
 
     def _definition(self, inlist, definition):
         if not definition: return inlist
