@@ -31,22 +31,11 @@ class Dictionary():
         self._entries = []
         self._tree = {}
         tree = etree.parse(file)
-        for valsi in tree.findall('//valsi[@type="gismu"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="cmavo"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="cmavo cluster"]'): 
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="lujvo"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="fu\'ivla"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="experimental gismu"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="experimental cmavo"]'):
-            self._save(valsi)
-        for valsi in tree.findall('//valsi[@type="cmene"]'):
-            self._save(valsi)
+        types = ['gismu', 'cmavo', 'cmavo cluster', 'lujvo', "fu'ivla",
+                 'experimental gismu', 'experimental cmavo', 'cmene']
+        for type in types:
+            for valsi in tree.findall('//valsi[@type="%s"]' % type):
+                self._save(valsi)
         for valsi in tree.findall('//nlword'):
             word = valsi.get('valsi')
             place = int(valsi.get('place') or '1')
