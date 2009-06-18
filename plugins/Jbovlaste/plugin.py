@@ -168,6 +168,8 @@ class Jbovlaste(callbacks.Plugin):
                 regexp = val
             elif key == 'like':
                 like = val
+        if not regexp:
+            valsi = [i.replace('.', ' ') for i in valsi]
         results = self.db.query(type=type, rafsi=rafsi, selmaho=selmaho,
                                 definition=definition, notes=notes,
                                 gloss=gloss, valsi=valsi, regexp=regexp,
@@ -175,6 +177,7 @@ class Jbovlaste(callbacks.Plugin):
         if shuffle:
             random.shuffle(results)
         if irc.nested:
+            results = [i.replace(' ', '.') for i in results]
             if results:
                 if limit is None:
                     irc.reply(' '.join(results))
@@ -211,7 +214,11 @@ class Jbovlaste(callbacks.Plugin):
         if not entries or ('no-results', True) in opts:
             irc.reply('no results')
         else:
-            for valsi in entries.split()[0:5]:
+            dupes = entries.split()
+            entries = []
+            [entries.append(i.replace('.', ' '))
+             for i in dupes if i not in entries]
+            for valsi in entries[0:5]:
                 if valsi in self.db:
                     entry = self.db[valsi]
                     res = '%s {%s}' % (entry.type, valsi)
