@@ -45,7 +45,7 @@ class Dictionary():
             self[word].places[place].append((valsi.get('word'), sense))
 
     def find(self, type=None, valsi=[], gloss=None, rafsi=[], like=None,
-              selmaho=None, definition=None, notes=None, regexp=False):
+              selmaho=[], definition=None, notes=None, regexp=False):
         results = self._entries
         results = self._type(results, type, regexp)
         results = self._valsi(results, valsi, regexp)
@@ -59,14 +59,14 @@ class Dictionary():
         return results
 
     def query(self, query=None, type=None, valsi=[], gloss=None,
-              rafsi=[], selmaho=None, definition=None, notes=None,
+              rafsi=[], selmaho=[], definition=None, notes=None,
               regexp=False, like=None):
         results = []
         args = {'gloss': gloss, 'valsi': valsi, 'rafsi': rafsi,
-                'selmaho': selmaho, 'definition': definition,
+                'selmaho': selmaho, 'definition': definition, 'like': like,
                 'notes': notes, 'regexp': regexp, 'type': type}
         if query:
-            listargs = ['valsi', 'rafsi']
+            listargs = ['valsi', 'rafsi', 'selmaho']
             order = ['gloss', 'valsi', 'rafsi',
                      'selmaho', 'definition', 'notes']
             for arg in order:
@@ -123,11 +123,13 @@ class Dictionary():
 
     def _selmaho(self, inlist, selmaho, regexp):
         if not selmaho: return inlist
-        if not regexp: selmaho = selmaho.upper().replace('H', 'h')
+        if not regexp:
+            selmaho = [i.upper().replace('H', 'h') for i in selmaho]
         return [i for i in inlist 
                   if self[i].selmaho and (regexp and
-                     re.search(selmaho, self[i].selmaho, re.IGNORECASE) or
-                     selmaho == self[i].selmaho)]
+                     any([re.search(s, self[i].selmaho, re.IGNORECASE)
+                          for s in selmaho]) or
+                     self[i].selmaho in selmaho)]
 
     def _definition(self, inlist, definition):
         if not definition: return inlist

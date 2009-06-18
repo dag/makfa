@@ -138,8 +138,8 @@ class Jbovlaste(callbacks.Plugin):
 
         Search for entries in jbovlaste.
         """
-        type = selmaho = definition = notes = gloss = like = None
-        rafsi = valsi = []
+        type = definition = notes = gloss = like = None
+        rafsi = valsi = selmaho = []
         shuffle = False
         limit = None
         regexp = False
@@ -150,7 +150,8 @@ class Jbovlaste(callbacks.Plugin):
                 rafsi = []
                 [rafsi.extend(i.split()) for i in val]
             elif key == 'selmaho':
-                selmaho = val
+                selmaho = []
+                [selmaho.extend(i.split()) for i in val]
             elif key == 'definition':
                 definition = val
             elif key == 'notes':
@@ -199,7 +200,8 @@ class Jbovlaste(callbacks.Plugin):
             else:
                 irc.reply('no entries')
     find = wrap(find, [getopts({'type': 'text', 'rafsi': commalist('text'),
-                                'selmaho': 'text', 'definition': 'text',
+                                'selmaho': commalist('text'),
+                                'definition': 'text',
                                 'notes': 'text', 'gloss': 'text',
                                 'valsi': commalist('text'), 'shuffle': '',
                                 'limit': 'positiveInt', 'regexp': '',
