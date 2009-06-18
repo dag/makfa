@@ -52,85 +52,134 @@ class Jbovlaste(callbacks.Plugin):
         self.db = jbovlaste.Dictionary('data/jbovlaste-en.xml')
 
     def selmaho(self, irc, msg, args, valsi):
-        """<entry>
+        """<entry> [entry...]
 
-        Get the selma'o of a cmavo or cmavo cluster.
+        List selma'o for entries.
         """
-        if valsi in self.db:
-            if self.db[valsi].selmaho:
-                irc.reply(self.db[valsi].selmaho)
+        if irc.nested:
+            L = [self.db[i].selmaho for i in valsi.split()
+                                    if i in self.db and self.db[i].selmaho]
+            if L:
+                irc.reply(' '.join(L))
+        else:
+            L = ['{%s} %s' % (i, self.db[i].selmaho)
+                 for i in valsi.split()
+                 if i in self.db and self.db[i].selmaho]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
             else:
                 irc.reply("no selma'o")
-        else:
-            irc.reply('no entry')
     selmaho = wrap(selmaho, ['text'])
 
     def rafsi(self, irc, msg, args, valsi):
-        """<word>
+        """<word> [word...]
 
-        Get the rafsi of a word.
+        List rafsi for words.
         """
-        if valsi in self.db:
-            if self.db[valsi].rafsi:
-                irc.reply(', '.join(self.db[valsi].rafsi))
-            else:
-                irc.reply("no rafsi")
+        if irc.nested:
+            L = [' '.join(self.db[i].rafsi)
+                 for i in valsi.split() if i in self.db and self.db[i].rafsi]
+            if L:
+                irc.reply(' '.join(L))
         else:
-            irc.reply('no entry')
+            L = ['{%s} %s' % (i, ', '.join(['-%s-' % i
+                                            for i in self.db[i].rafsi]))
+                 for i in valsi.split() if i in self.db and self.db[i].rafsi]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+            else:
+                irc.reply('no rafsi')
     rafsi = wrap(rafsi, ['text'])
 
     def definition(self, irc, msg, args, valsi):
-        """<entry>
+        """<entry> [entry...]
 
-        Get the definition for an entry.
+        List definitions for entries.
         """
-        if valsi in self.db:
-            if self.db[valsi].definition:
-                irc.reply(self.db[valsi].definition.encode('utf-8'))
-            else:
-                irc.reply("no definition")
+        valsi = valsi.split()
+        if irc.nested:
+            if valsi and valsi[0] in self.db:
+                irc.reply(self.db[valsi[0]].definition.encode('utf-8'))
         else:
-            irc.reply('no entry')
+            L = ['{%s} "%s"' % (i, self.db[i].definition.encode('utf-8'))
+                 for i in valsi if i in self.db]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, ';  '.join(L)))
+            else:
+                irc.reply('no definition')
     definition = wrap(definition, ['text'])
 
     def notes(self, irc, msg, args, valsi):
-        """<entry>
+        """<entry> [entry...]
 
-        Get the notes for an entry.
+        List notes for entries.
         """
-        if valsi in self.db:
-            if self.db[valsi].notes:
-                irc.reply(self.db[valsi].notes.encode('utf-8'))
-            else:
-                irc.reply("no notes")
+        valsi = valsi.split()
+        if irc.nested:
+            if valsi and valsi[0] in self.db:
+                irc.reply(self.db[valsi[0]].notes.encode('utf-8'))
         else:
-            irc.reply('no entry')
+            L = ['{%s} "%s"' % (i, self.db[i].notes.encode('utf-8'))
+                 for i in valsi if i in self.db and self.db[i].notes]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, ';  '.join(L)))
+            else:
+                irc.reply('no notes')
     notes = wrap(notes, ['text'])
 
     def gloss(self, irc, msg, args, valsi):
-        """<entry>
+        """<entry> [entry...]
 
-        Get the gloss words for an entry.
+        List gloss words for entries.
         """
-        if valsi in self.db:
-            places = self.db[valsi].places
-            if 1 in places:
-                irc.reply(', '.join([i[0] for i in places[1]]).encode('utf-8'))
-            else:
-                irc.reply("no glosses")
+        valsi = valsi.split()
+        if irc.nested:
+            if valsi and valsi[0] in self.db and 1 in self.db[valsi[0]].places:
+                irc.reply(self.db[valsi[0]].places[1][0][0])
         else:
-            irc.reply('no entry')
+            L = ['{%s} %s' % (i, ', '.join(['"%s"' % g[0]
+                                            for g in self.db[i].places[1]]))
+                 for i in valsi if i in self.db and 1 in self.db[i].places]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+            else:
+                irc.reply('no glosses')
     gloss = wrap(gloss, ['text'])
 
     def type(self, irc, msg, args, valsi):
-        """<entry>
+        """<entry> [entry...]
 
-        Get the word type of an entry.
+        List types for entries.
         """
-        if valsi in self.db:
-            irc.reply(self.db[valsi].type)
+        if irc.nested:
+            L = [self.db[i].type for i in valsi.split() if i in self.db]
+            if L:
+                irc.reply(' '.join(L))
         else:
-            irc.reply('no entry')
+            L = ['{%s} %s' % (i, self.db[i].type)
+                 for i in valsi.split() if i in self.db]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+            else:
+                irc.reply("no types")
     type = wrap(type, ['text'])
 
     def find(self, irc, msg, args, opts, query):
