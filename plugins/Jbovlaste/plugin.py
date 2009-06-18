@@ -34,7 +34,12 @@ import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 import random
-from jbovlaste import Dictionary
+
+
+try:
+    reload(jbovlaste)
+except:
+    import jbovlaste
 
 
 class Jbovlaste(callbacks.Plugin):
@@ -44,7 +49,7 @@ class Jbovlaste(callbacks.Plugin):
     def __init__(self, irc):
         self.__parent = super(Jbovlaste, self)
         self.__parent.__init__(irc)
-        self.db = Dictionary('data/jbovlaste-en.xml')
+        self.db = jbovlaste.Dictionary('data/jbovlaste-en.xml')
 
     def selmaho(self, irc, msg, args, valsi):
         """<entry>
