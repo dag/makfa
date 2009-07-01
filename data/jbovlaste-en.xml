@@ -2,7 +2,11 @@
 <dictionary>
 <direction from="lojban" to="English">
 
+<valsi word="KEnydys" type="cmene"><definition>Canada</definition><notes>Cf. {kadnygu'e}, {kenyDAS}.</notes></valsi>
+
 <valsi word="LIEtuvas" type="cmene"><definition>Lithuania.</definition></valsi>
+
+<valsi word="OTa,uas" type="cmene"><definition>Ottawa</definition></valsi>
 
 <valsi word="SINgapur" type="cmene"><definition>Singapore.</definition></valsi>
 
@@ -191,6 +195,8 @@
 <valsi word="balji" type="gismu"><definition>$x_{1}$ is a bulb [body-part] of plant/species $x_{2}$; [metaphor: rounded, bulgy].</definition><notes>See also {punli}, {batke}.</notes></valsi>
 
 <valsi word="baljypau" type="lujvo"><definition>$x_1$ is a clove of bulb $x_2$ of plant/species $x_3$.</definition><notes>see also {sunga}, {kriofla}</notes></valsi>
+
+<valsi word="balkulctu" type="lujvo"><definition>$x_1$ is a professor teaching audience $x_2$ ideas/methods/lore $x_3$ (du'u) about subject(s) $x_4$ by method $x_5$ (event)</definition></valsi>
 
 <valsi word="balni" type="gismu"><definition>$x_{1}$ is a balcony/overhang/ledge/shelf of building/structure $x_{2}$.</definition><notes>See also {kajna}.</notes></valsi>
 
@@ -384,6 +390,8 @@
 
 <valsi word="bei" type="cmavo"><selmaho>BEI</selmaho><definition>separates multiple linked sumti within a selbri; used in descriptions.</definition></valsi>
 
+<valsi word="beiDJIN" type="cmene"><definition>Beijing</definition></valsi>
+
 <valsi word="bemjoitco" type="lujvo"><definition>$b_1$=$k_1$ is North America and South America; $b_1$=$k_1$ is Pan-American.</definition><notes>Cf. {bemro}, {ketco}, {merko}, {braplu}</notes></valsi>
 
 <valsi word="bemro" type="gismu"><rafsi>bem</rafsi><rafsi>be'o</rafsi><definition>$x_{1}$ reflects North American culture/nationality/geography in aspect $x_{2}$.</definition><notes>See also {merko}, {kadno}, {xispo}, {mexno}.</notes></valsi>
@@ -408,7 +416,7 @@
 
 <valsi word="bermau" type="lujvo"><definition>$b_1=z_1$ is farther north than $b_2=z_1$ according to frame of reference $b_3$ by distance/gap/margin $z_4$.</definition><notes>Cf. {berti}, {zmadu}, {beryrai}</notes></valsi>
 
-<valsi word="bernanjudri" type="lujvo"><definition>$j_1$ is the latitude/declination of $j_2$ in system $j_3$</definition><notes>from {berti} {snanu} {judri}.  c.f. {sunsicyjudri} {plinyxabykoi} {jedjipli'i} {julra'o} {cacryra'o}.  Example: "la .torontos. se bernanjudri lo julra'o be li voci pi'e vono bei be'a" means "Toronto has a latitude of 43° 40' N".</notes></valsi>
+<valsi word="bernanjudri" type="lujvo"><definition>$j_1$ is the latitude/declination of $j_2$ in system $j_3$</definition><notes>From {berti}, {snanu}, {judri}.  Cf. {sunsicyjudri}, {plinyxabykoi}, {jedjipli'i}, {julra'o}, {cacryra'o}.  </notes></valsi>
 
 <valsi word="berpau" type="lujvo"><definition>$b_1=p_1$is the northern part of $b_2=p_2$.</definition></valsi>
 
@@ -737,9 +745,7 @@
 
 <valsi word="cacra" type="gismu"><definition>$x_{1}$ is $x_{2}$ hours in duration (default is 1 hour) by standard $x_{3}$.</definition><notes>See also {junla}, {mentu}, {snidu}, {tcika}, {temci}.</notes></valsi>
 
-<valsi word="cacryra'o" type="lujvo"><definition>$x_1$ is $x_2$ hours in angular measure of right ascension RA (default is 1) </definition><notes>from {cacra} {radno} c.f. {julra'o} {sostartai}. {pi'e} used in x2 indicates a base of 60. Example: 'la .proksimas.sentauras. zvati lo cacryra'o be li pavo pi'e reso pi'e voci be'o .e lo julra'o be li ni'u xare  pi'e vono pi'e voxa ma'i jy renonono pi'e no' means 'Proxima Centauri was located at RA 14h 29m 43s DEC -62° 40' 46" during epoch J2000.0'.
-
-</notes></valsi>
+<valsi word="cacryra'o" type="lujvo"><definition>$x_1$ is $x_2$ hours in angular measure of right ascension RA (default is 1) </definition><notes>From {cacra} {radno}. Cf. {julra'o} {sostartai}. {pi'e} used in x2 indicates a base of 60. </notes></valsi>
 
 <valsi word="cadzu" type="gismu"><rafsi>dzu</rafsi><definition>$x_{1}$ walks/strides/paces on surface $x_{2}$ using limbs $x_{3}$.</definition><notes>See also {stapa}, {bajra}, {klama}, {litru}.</notes></valsi>
 
@@ -888,7 +894,7 @@
 
 <valsi word="censa" type="gismu"><rafsi>ces</rafsi><definition>$x_{1}$ is holy/sacred to person/people/culture/religion/cult/group $x_{2}$.</definition><notes>See also {cevni}, {krici}, {latna}, {pruxi}, {lijda}, {sinma}.</notes></valsi>
 
-<valsi word="centi" type="gismu"><rafsi>cen</rafsi><definition>$x_{1}$ is a hundredth [1/100; 1$x_{1}$0**-2] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>See also {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}, {litce}, {merli}, {decti}, {dekto}, {femti}, {gigdo}, {gocti}, {gotro}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro}.</notes></valsi>
+<valsi word="centi" type="gismu"><rafsi>cen</rafsi><definition>$x_{1}$ is a hundredth [1/100; 1 ⨉ $10^{-2}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>See also {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}, {litce}, {merli}, {decti}, {dekto}, {femti}, {gigdo}, {gocti}, {gotro}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro}.</notes></valsi>
 
 <valsi word="centre" type="lujvo"><definition>$m_1 = c_1$ is $m_2 = c_2$ centimeter(s) / hundredth(s) of a meter [metric unit] in length (default 1) measured in direction $m_3 = c_3$ by standard $x_4 = m_3$.</definition><notes>See also {navytre}.  Made from {centi} + {mitre}.</notes></valsi>
 
@@ -1490,6 +1496,8 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="damtubnu" type="lujvo"><definition>$t_1$ is a chimney made of of material $t_2$ for emitting/expelling smoke/gas/steam/magma $t_3=d_1$ from source $d_2$</definition><notes>{tubnu}, {danmo}.</notes></valsi>
 
+<valsi word="damva'u" type="lujvo"><definition>$v_1$ smokes/inhales $v_2$. $v_1$ is a smoker.</definition><notes>not necessarily tobacco. Cf. {danmo}, {vasxu}. See also {tankyva'u}, {sigva'u}, {marnyva'u}.</notes></valsi>
+
 <valsi word="dandu" type="gismu"><rafsi>dad</rafsi><definition>$x_{1}$ hangs/dangles/is suspended from $x_{2}$ by/at/with joint $x_{3}$.</definition><notes>Pendant (= {dadja'i}); also dependent (original meaning). See also {lasna}, {jorne}.</notes></valsi>
 
 <valsi word="danfu" type="gismu"><rafsi>daf</rafsi><definition>$x_{1}$ is the answer/response/solution/[reply] to question/problem $x_{2}$.</definition><notes>(cf. ciksi, frati, preti, nabmi, spuda for agentive response/reply, cpedu)</notes></valsi>
@@ -1584,7 +1592,7 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="debysamcu" type="lujvo"><definition>$x_1$ is a jicama of species/variety $x_2$.</definition><notes>see also {samcu}, {dembi}</notes></valsi>
 
-<valsi word="decti" type="gismu"><rafsi>dec</rafsi><definition>$x_{1}$ is a tenth [1/10; 1$x_{1}$0**-1] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="decti" type="gismu"><rafsi>dec</rafsi><definition>$x_{1}$ is a tenth [1/10; 1 ⨉ $10^{-1}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="degja'i" type="lujvo"><definition>$j_1$ is a ring on finger $j_2=d_1$.</definition></valsi>
 
@@ -1598,7 +1606,7 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="dekpu" type="gismu"><definition>$x_{1}$ is $x_{2}$ (default 1) local volume unit(s) [non-metric; e.g. bushel], standard $x_{3}$, $x_{4}$ subunits.</definition><notes>Gallon (= {likydekpu}), quart (= {likseldekpu}), barrel (wet = likybradekpu, dry = sudbradekpu), bushel (= {sudydekpu}), peck (= {sudyseldekpu}), cupful (= {kabrydekpu}), tablespoon (= {mucydekpu}); teaspoon (= {mucyseldekpu}); (all of these lujvo may need gic- to distinguish the English measurement system in contrasting with some local system; the English system is otherwise presumed to be the default non-metric system).  (additional subunit places may be added as $x_5$, $x_6$, ...); See also {canlu}, {litce}, {rupnu}, {fepni}, {gutci}, {minli}, {merli}, {bunda}, {kramu}.</notes></valsi>
 
-<valsi word="dekto" type="gismu"><rafsi>dek</rafsi><definition>$x_{1}$ is ten [10; 1*10**1] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="dekto" type="gismu"><rafsi>dek</rafsi><definition>$x_{1}$ is ten [10; 1 ⨉ $10^1$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="delfinu" type="fu'ivla"><definition>$x_1$ is a dolphin of species/breed $x_2$</definition></valsi>
 
@@ -1843,6 +1851,10 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="dy" type="cmavo"><selmaho>BY2</selmaho><definition>letteral for d.</definition></valsi>
 
+<valsi word="dzejdasra" type="lujvo"><definition>$s_1=d_2=l_2$ is a conservative in beliefs $l_3$ against opposition $s_3$ by means $s_4$</definition><notes>From {dzena}, {lijda}, {sarji}. Cf. {vricykricru}, {dzejdasratrusi'o}.</notes></valsi>
+
+<valsi word="dzejdasratrusi'o" type="lujvo"><definition>$si_1$ is a conservative political ideology as applied by $t_1=sa_1=d_2=l_2$ among/in people/territory/domain $t_2$ based on the works of thinker $si_3$</definition><notes>From {dzena}, {lijda}, {sarji}, {turni}, {sidbo}. Cf. {dzejdasra}, {ka'irtrusi'o}, {vricykricrutrusi'o},  {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
+
 <valsi word="dzeko'o" type="lujvo"><definition>$s_1=d_1$ is Celtic in aspect $s_2$.</definition></valsi>
 
 <valsi word="dzena" type="gismu"><rafsi>dze</rafsi><definition>$x_{1}$ is an elder/ancestor of $x_{2}$ by bond/tie/degree $x_{3}$; $x_{1}$'s generation precedes $x_{2}$'s parents.</definition><notes>See also {patfu}, {rirni}, {tamne}.</notes></valsi>
@@ -1930,6 +1942,8 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 <valsi word="fai" type="cmavo"><selmaho>FA</selmaho><definition>sumti place tag: tag a sumti moved out of numbered place structure; used in modal conversions.</definition></valsi>
 
 <valsi word="faidon" type="cmene"><definition>Fido.</definition></valsi>
+
+<valsi word="fairpaltrusi'o" type="lujvo"><definition>$s_1$ is a socialist ideology as applied by $t_1$ in/among people/territory/domain $t_2=f_2$ based on the works of thinker $s_3$</definition><notes>From {fatri}, {prali}, {turni}, {sidbo}. Cf. {sivypo'eci'e}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
 
 <valsi word="falcru" type="lujvo"><definition>$c_1$ (agent) drops $f_1$ to $f_2$ from $f_3$.</definition></valsi>
 
@@ -2047,7 +2061,7 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="felma'i" type="lujvo"><definition>$x_1$ is November/eleventh month of year $x_2$ in calendar $x_3$</definition><notes>Note: Based on experimental rafsi for {fei} (fel). Use with caution. Alternative: {pavypavma'i}</notes></valsi>
 
-<valsi word="femti" type="gismu"><rafsi>fem</rafsi><definition>$x_{1}$ is 1$x_{1}$0**-15 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="femti" type="gismu"><rafsi>fem</rafsi><definition>$x_{1}$ is $10^{-15}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="fendi" type="gismu"><rafsi>fed</rafsi><definition>$x_{1}$ (agent) divides/partitions/separates $x_{2}$ into sections/parts/ind. $x_{3}$ by method/partition $x_{4}$.</definition><notes>Also segments.  See also {sepli}, {bitmu}, {fatri}, {dilcu}, {katna}, {frinu}.</notes></valsi>
 
@@ -2229,6 +2243,8 @@ Gismu deep structure is "cuxna gi'e cmima"</notes></valsi>
 
 <valsi word="friti" type="gismu"><rafsi>fit</rafsi><definition>$x_{1}$ offers/proffers $x_{2}$ [offering] to $x_{3}$ with conditions $x_{4}$.</definition><notes>($x_4$ may be nu canja, nu pleji, etc.; an unconditional offering has the 'condition' of acceptance); $x_2$ may be a specific object, a commodity (mass), an event, or a property; pedantically, for objects/commodities, this is sumti-raising from ownership of the object/commodity (= {posfriti}, posyselfriti for unambiguous {semantics}).  See also {canja}, {dunda}, {rinsa}, {vecnu}, {jdima}, {cnemu}, {pleji}, {vitke}.</notes></valsi>
 
+<valsi word="frufengalu" type="fu'ivla"><definition>$x_1$ is a bandersnatch of species $x_2$</definition></valsi>
+
 <valsi word="frufra" type="lujvo"><definition>$fru_1=fra_1$ frowns/grimaces at/in reaction to $fra_3$.</definition></valsi>
 
 <valsi word="frumu" type="gismu"><rafsi>fru</rafsi><definition>$x_{1}$ frowns/grimaces (facial expression).</definition><notes>$x_1$ frowns/grimaces at/in reaction to $x_2$ (= {frufra}).  See also {cmila}, {cisma}.</notes></valsi>
@@ -2401,7 +2417,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gidva" type="gismu"><rafsi>gid</rafsi><rafsi>gi'a</rafsi><definition>$x_{1}$ (person/object/event) guides/conducts/pilots/leads $x_{2}$ (active participants) in/at $x_{3}$ (event).</definition><notes>A guiding person advises/suggests/sets an example to be followed, but does not necessarily control/direct/manage actual execution of an event; an event may serve as a guide by setting a pattern/example to be emulated.  See also {jitro}, {ralju}, {sazri}, te {bende}, {jatna}, {fukpi}, {morna}.</notes></valsi>
 
-<valsi word="gigdo" type="gismu"><rafsi>gig</rafsi><rafsi>gi'o</rafsi><definition>$x_{1}$ is a billion [British milliard] [1$x_{1}$0**9] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}. {litce}, {merli}, {centi}, {decti}, {dekto}, {femti}, {gocti}, {gotro}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro})</notes></valsi>
+<valsi word="gigdo" type="gismu"><rafsi>gig</rafsi><rafsi>gi'o</rafsi><definition>$x_{1}$ is a billion [British milliard] [$10^9$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}. {litce}, {merli}, {centi}, {decti}, {dekto}, {femti}, {gocti}, {gotro}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro})</notes></valsi>
 
 <valsi word="ginka" type="gismu"><rafsi>gik</rafsi><definition>$x_{1}$ is a camp/encampment/temporary residence of $x_{2}$ at location $x_{3}$.</definition><notes>See also {dinju}, {xabju}, {zdani}.</notes></valsi>
 
@@ -2439,6 +2455,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gleve'u" type="lujvo"><definition>$x_1$ is a prositute offering his/her services to $x_2$ for $x_3$ (payment).</definition></valsi>
 
+<valsi word="gliban" type="cmene"><definition>The English language.</definition><notes>Cf. {glico}, {bangu}, {glibau}.</notes></valsi>
+
 <valsi word="glibau" type="lujvo"><definition>$g_1=b_1$ is the English language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {glico} {bangu} c.f. {gliglibau} {merbau} {xinglibau} {kadnyglibau} {sralybau} {kisyglibau} {nanfi'oglibau} {bangrnaidjiria}</notes></valsi>
 
 <valsi word="glico" type="gismu"><rafsi>gic</rafsi><rafsi>gli</rafsi><definition>$x_{1}$ is English/pertains to English-speaking culture in aspect $x_{2}$.</definition><notes>Generally assume broadest sense of 'English'; may refer to 'English', pertaining to the country/people/culture of England (normally requiring constraint = gligu'e, or simply redundancy = gligli-); British English, the norm language of the UK (= {gliglibau}).  (cf. {brito} which refers to the United Kingdom as a whole or to the British empire, {merko}, {sralo}, {kadno}, {skoto})</notes></valsi>
@@ -2465,7 +2483,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="go'u" type="cmavo"><selmaho>GOhA</selmaho><definition>pro-bridi: repeats a remote past bridi.</definition></valsi>
 
-<valsi word="gocti" type="gismu"><rafsi>goc</rafsi><definition>$x_{1}$ is 1$x_{1}$0**-24 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="gocti" type="gismu"><rafsi>goc</rafsi><definition>$x_{1}$ is $10^{-24}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}. {litce}, {merli}, {centi}, {decti}, {dekto}, {femti}, {gigdo}, {gotro}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro})</notes></valsi>
 
 <valsi word="goi" type="cmavo"><selmaho>GOI</selmaho><definition>sumti assignment; used to define/assign ko'a/fo'a series pro-sumti; Latin 'sive'.</definition></valsi>
 
@@ -2473,7 +2491,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gonai" type="cmavo cluster"><selmaho>GA*</selmaho><definition>logical connective: forethought all but tanru-internal exclusive or (with gi); Latin 'aut'.</definition></valsi>
 
-<valsi word="gotro" type="gismu"><rafsi>got</rafsi><definition>$x_{1}$ is 1$x_{1}$0**24 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}. {litce}, {merli}, {centi}, {decti}, {dekto}, {femti}, {gigdo}, {gocti}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro})</notes></valsi>
+<valsi word="gotro" type="gismu"><rafsi>got</rafsi><definition>$x_{1}$ is $10^{24}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. {grake}, {mitre}, {snidu}, {stero}, {delno}, {molro}, {kelvo}, {xampo}, {gradu}. {litce}, {merli}, {centi}, {decti}, {dekto}, {femti}, {gigdo}, {gocti}, {kilto}, {megdo}, {mikri}, {milti}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro})</notes></valsi>
 
 <valsi word="gradu" type="gismu"><rafsi>rau</rafsi><definition>$x_{1}$ [magnitude] is a unit/degree of/on scale/reference standard $x_{2}$ (si'o) measuring property $x_{3}$.</definition><notes>Also grade, level, point; $x_3$ dimension.  See also {ckilu}, {kantu}, {kelvo}, {merli}, {ranti}, {selci}.</notes></valsi>
 
@@ -2533,7 +2551,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gugdrnorge" type="fu'ivla"><definition>$g_1$ is Norway.</definition></valsi>
 
-<valsi word="gugdrpolska" type="fu'ivla"><definition>$x_1$ is Poland</definition></valsi>
+<valsi word="gugdrpolska" type="fu'ivla"><definition>$x_1$ is Poland</definition><notes>Cf. {polskas}.</notes></valsi>
 
 <valsi word="gugdrtalia" type="fu'ivla"><definition>$x_1$ is Italy</definition></valsi>
 
@@ -2555,9 +2573,9 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gugmu'u" type="lujvo"><definition>$x_1$ migrates to country $x_2$ from country $x_3$ over path/route $x_4$.</definition></valsi>
 
-<valsi word="gugypau" type="lujvo"><definition>$p_1$ is a state/province (second-level administrative division) of country $p_2=g_1$.</definition><notes>Cf. {gugypausle}, {gugde}, {pagbu}.</notes></valsi>
+<valsi word="gugypau" type="lujvo"><definition>$p_1$ is a state/province/region (first-level administrative division) of country $p_2=g_1$.</definition><notes>Cf.{gugde}, {pagbu}.  A province or region can also be a second-level administrative division; for these use {gugypausle}.</notes></valsi>
 
-<valsi word="gugypausle" type="lujvo"><definition>$s_1$ is a county/district (third-level administrative division) of country $s_2=g_1$.</definition><notes>Cf. {gugypau}, {gugde}, {selci}.</notes></valsi>
+<valsi word="gugypausle" type="lujvo"><definition>$s_1$ is a county/district/province (second-level administrative division) of country $s_2=g_1$.</definition><notes>Cf. {gugde}, {pagbu}, {selci}. A province can also be a first-level administrative division; for this use {gugypau}, or optionally {vipygu'e} if it is in a country with a federal government.</notes></valsi>
 
 <valsi word="gukcanre" type="lujvo"><definition>$g_1=c_1$ is sandy abrasive material.</definition><notes>{guska} {canre}</notes></valsi>
 
@@ -2577,6 +2595,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="gunta" type="gismu"><rafsi>gut</rafsi><definition>$x_{1}$ (person/mass) attacks/invades/commits aggression upon victim $x_{2}$ with goal/objective $x_{3}$.</definition><notes>See also {bradi}, {damba}, {darxi}, {jamna}, {jenca}, {jursa}.</notes></valsi>
 
+<valsi word="guntrusi'o" type="lujvo"><definition>$s_1$ is a communist ideology (default: Marxist-Leninist) as it applies to the governance of  people/territory/domain $t_2$ based on the works of thinker(s) $s_3$</definition><notes>From {gunka}, {turni}, {sidbo}. Cf. {trudjigri}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
+
 <valsi word="gurgau" type="lujvo"><definition>$x_1=ga_1$ rolls object $x_2=gu_1$ on/against surface $x_3=gu_2$, with axis/ axle of rotation $x_4=gu_3$.</definition><notes>See also {gunro}, {gasnu}, {cu'arkubli}.</notes></valsi>
 
 <valsi word="gurni" type="gismu"><rafsi>gru</rafsi><definition>$x_{1}$ is grain/[British: corn]/cereal from plant/species $x_{2}$.</definition><notes>See also {bavmi}, {cunmi}, {mavji}, {maxri}, {molki}, {mraji}, {rismi}, {sobde}, {spati}, {zumri}, {nanba}, {sorgu}.</notes></valsi>
@@ -2585,7 +2605,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="guska" type="gismu"><rafsi>guk</rafsi><definition>$x_{1}$ blade/scraper/erosive scrapes/erodes/abrades $x_{2}$ from $x_{3}$.</definition><notes>Abrade, abrasive (= {mosyguska}).  See also {balre}, {sraku}, {batci}, {canpa}, {mosra}.</notes></valsi>
 
-<valsi word="guska'u" type="lujvo"><definition>$x_1$ is a photon</definition><notes>c.f. {gusni}, {kantu}, {lektoni}.</notes></valsi>
+<valsi word="guska'u" type="lujvo"><definition>$x_1$ is a photon.</definition><notes>From: {gusni}, {kantu}.  Cf. {lektoni}.</notes></valsi>
 
 <valsi word="gusminli" type="lujvo"><definition>$x_1$ is $x_2$ (default 1) light year(s)</definition><notes>from {gusni} {minli}  c.f. {solminli} {tanminli}.</notes></valsi>
 
@@ -3155,7 +3175,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="julne" type="gismu"><rafsi>ju'e</rafsi><definition>$x_{1}$ is a net/filter allowing passage of $x_{2}$, prohibiting passage of $x_{3}$, netting properties $x_{4}$.</definition><notes>Also sieve.  See also {komcu}, {ciste}, {jgena}.</notes></valsi>
 
-<valsi word="julra'o" type="lujvo"><definition>$x_1$ is $x_2$ degrees in angular measure (default is 1)</definition><notes>From {junla} {radno}. Cf. {cacryra'o}, {plinyxabykoi}, {jedjipli'i}.  {pi'e} used in x2 indicates a base of 60.  Example: 'ko'a zvati lo julra'o be li reno pi'e pavo pi'e cino bei be'a [lo plinyxabykoi] be'o .e lo julra'o be li pano pi'e pare pi'e vomu bei du'a [lo vajrai jedjipli'i]' means 'it is located at 20° 14' 30" N [of the Equator] and 10° 12' 45" E [of the Prime Meridian].</notes></valsi>
+<valsi word="julra'o" type="lujvo"><definition>$x_1$ is $x_2$ degrees in angular measure (default is 1)</definition><notes>From {junla} {radno}. Cf. {cacryra'o}, {plinyxabykoi}, {jedjipli'i}.  {pi'e} used in x2 indicates a base of 60.  </notes></valsi>
 
 <valsi word="jundi" type="gismu"><rafsi>jud</rafsi><rafsi>ju'i</rafsi><definition>$x_{1}$ is attentive towards/attends/tends/pays attention to object/affair $x_{2}$.</definition><notes>See also {kurji}, {zvati}.</notes></valsi>
 
@@ -3213,6 +3233,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="ka'i" type="cmavo"><selmaho>BAI</selmaho><definition>krati modal, 1st place                            represented by ...</definition></valsi>
 
+<valsi word="ka'irtrusi'o" type="lujvo"><definition>$s_1$ is the concept of representative democracy (default: political representative democracy) as it applies to the governance of $t_2$ based on the works of thinker(s) $s_3$</definition><notes>From {krati}, {turni}, {sidbo}. Cf. {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
+
 <valsi word="ka'o" type="cmavo"><selmaho>PA5</selmaho><definition>digit/number: imaginary i; square root of -1.</definition></valsi>
 
 <valsi word="ka'u" type="cmavo"><selmaho>UI2</selmaho><definition>evidential: I know by cultural means (myth or custom).</definition><notes>See also {kluju'o}.</notes></valsi>
@@ -3235,7 +3257,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="kadnyglibau" type="lujvo"><definition>$k_1=g_1=b_1$ is the Canadian English language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {kadno} {glico} {bangu} c.f. {glibau}</notes></valsi>
 
-<valsi word="kadnygu'e" type="lujvo"><definition>$k_1=g_1$ is Canada</definition><notes>from {kadno} {gugde}.</notes></valsi>
+<valsi word="kadnygu'e" type="lujvo"><definition>$k_1=g_1$ is Canada</definition><notes>From {kadno}, {gugde}. Cf. {KEnydys}, {kenyDAS}.</notes></valsi>
 
 <valsi word="kafke" type="gismu"><definition>$x_{1}$ coughs/farts/burps up/out $x_{2}$ [predominantly gaseous] from orifice $x_{3}$.</definition><notes>See also {bilma}, {senci}, {sputu}, {vamtu}.</notes></valsi>
 
@@ -3269,6 +3291,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="kalte" type="gismu"><rafsi>kat</rafsi><definition>$x_{1}$ hunts/stalks prey/quarry/game $x_{2}$ for purpose $x_{3}$.</definition><notes>Also verb: to fish (= {fipkalte}).  See also {jersi}, {kavbu}, {sisku}, {rivbi}.</notes></valsi>
 
+<valsi word="kamjikca" type="lujvo"><definition>$x_1$ is a society; $x_1$ is social</definition></valsi>
+
 <valsi word="kamju" type="gismu"><definition>$x_{1}$ is a column/pillar of material $x_{2}$.</definition><notes>Spine (= {bogykamju}), vertebra (= {kamjybo'u}).  See also {ckana}, {garna}, {sanli}, {slanu}.</notes></valsi>
 
 <valsi word="kamjunmre" type="lujvo"><definition>$m_1$  tests/evaluates/measures $j_1$'s knowledge of facts (du'u)  $j_2$ in subject area $j_3$  as $m_3$ units on scale $m_4$ with accuracy $m_5$</definition><notes>The x2 through x4 places are = m2
@@ -3283,6 +3307,8 @@ If you are actually translating something with a copyright notice, you should le
 <valsi unofficial="true" word="kamro" type="experimental gismu"><definition>$x_1$ reflects Welsh language/culture in aspect $x_2$.</definition></valsi>
 
 <valsi word="kamtatpi" type="lujvo"><definition>$k_1$ is the fatigue of $t_1$ in being/doing $t_2$ (event).</definition><notes>Cf. {tatpi}, {sipna}</notes></valsi>
+
+<valsi word="kamyzi'e" type="lujvo"><definition>$x_1$ is the quality of whom/what is free to do/be $x_2=z_2$; $x_1$ is freedom/liberty of $x_2=z_2$</definition></valsi>
 
 <valsi word="kanba" type="gismu"><definition>$x_{1}$ is a goat/angora/[billy-goat/kid] of species/breed $x_{2}$.</definition><notes>See also {lanme}, {sunla}.</notes></valsi>
 
@@ -3331,6 +3357,10 @@ If you are actually translating something with a copyright notice, you should le
 <valsi word="karni" type="gismu"><definition>$x_{1}$ is a journal/periodical/magazine/[newspaper] with content $x_{2}$ published by $x_{3}$ for audience $x_{4}$.</definition><notes>$x_2$ may be a subject, but not all journals have a single subject; all have some sort of principle defining what is included, so this need not be a list.  See also {papri}, {pelji}, {tcidu}.</notes></valsi>
 
 <valsi word="karnyke'u" type="lujvo"><definition>$x_1$ is the $x_3$'rd issue/number of journal/periodical/magazine/publication $x_2$ with content $x_4$ published by $x_5$ for audience $x_6$  .</definition></valsi>
+
+<valsi word="karpo'i" type="lujvo"><definition>$x_{1}$ is an open-break with broken piece $x_{2}$.</definition></valsi>
+
+<valsi word="karpo'ijbe" type="lujvo"><definition>$j_1=k_3$ hatches from eggshell $j_2=p_1=k_1$</definition><notes>{kalri}+{porpi}+{jbena} This is based on the lujvo {karpo'i}, glossed as "something breaks open". It is not obvious to me whether any of $k_2$ (portal destination), $p_2$ (pieces of broken thing), $j_3$ (birthdate), or $j_4$ (birthplace) are appropriate to include in this lujvo.</notes></valsi>
 
 <valsi word="kartamo" type="fu'ivla"><definition>$x_1$ is safflower of species/variety $x_2$.</definition></valsi>
 
@@ -3384,6 +3414,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="kerfa" type="gismu"><rafsi>kre</rafsi><definition>$x_{1}$ is a/the hair/fur [body-part] of $x_{2}$ at body location $x_{3}$.</definition><notes>See also {skapi}, {sunla}, {pimlu}.</notes></valsi>
 
+<valsi word="kerlakse" type="lujvo"><definition>$l_1$ is earwax/cerumen.</definition><notes>Cf. {kerlo}, {lakse}.</notes></valsi>
+
 <valsi word="kerlo" type="gismu"><rafsi>ker</rafsi><definition>$x_{1}$ is a/the ear [body-part] of $x_{2}$; [metaphor: sensory apparatus, information gathering].</definition><notes>(adjective:) $x_1$ is aural.  See also {kanla}, {savru}, {smaji}, {tirna}, {ractu}.</notes></valsi>
 
 <valsi word="ketco" type="gismu"><rafsi>ket</rafsi><rafsi>tco</rafsi><definition>$x_{1}$ reflects South American culture/nationality/geography in aspect $x_{2}$.</definition><notes>See also {merko}, {xispo}, {brazo}, {gento}, {spano}.</notes></valsi>
@@ -3426,13 +3458,15 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi unofficial="true" word="kibro" type="experimental gismu"><definition>$x_1$ pertains to the internet/cyberspace in aspect $x_2$</definition><notes>Proposed by xorxes. Short rafsi -kib-.</notes></valsi>
 
+<valsi word="kibykarni" type="lujvo"><definition>$ki_1=ka_1$ is an internet-journal/web-article/blog (web-log) with content $ka_2$ published by $ka_3$ for audience $ka_4$</definition><notes>{kibro} + {karni}</notes></valsi>
+
 <valsi word="kicne" type="gismu"><rafsi>kic</rafsi><rafsi>ki'e</rafsi><definition>$x_{1}$ cushions $x_{2}$ with material $x_{3}$; $x_{1}$ is a cushion/pillow/pad [for $x_{2}$] of padding material $x_{3}$.</definition><notes>See also {ckana}, {matci}.</notes></valsi>
 
 <valsi word="kijno" type="gismu"><rafsi>kij</rafsi><definition>$x_{1}$ is a quantity of/contains/is made of oxygen (O); [metaphor: supporting life/combustion].</definition><notes>See also {jelca}, {vacri}, {vasxu}.</notes></valsi>
 
 <valsi word="kilga'axa'i" type="lujvo"><definition>$x_1=xa_1=g_1=k_1$ is a lance/spear/javelin/pointed-rod weapon for use against $x_2=xa_2$ by $x_3=xa_3$ of material $x_4=g_2$.</definition><notes>{kinli} {grana} {xarci}; this lujvo structure is from {noralujv}. The author of this definition is uncertain that {jesxa'i} would not be a better lujvo for the purpose.</notes></valsi>
 
-<valsi word="kilto" type="gismu"><rafsi>ki'o</rafsi><definition>$x_{1}$ is a thousand [1000; 1$x_{1}$0**3] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro, minli)</notes></valsi>
+<valsi word="kilto" type="gismu"><rafsi>ki'o</rafsi><definition>$x_{1}$ is a thousand [1000; $10^3$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro, minli)</notes></valsi>
 
 <valsi word="kinli" type="gismu"><rafsi>kil</rafsi><definition>$x_{1}$ is sharp/keen at locus $x_{2}$.</definition><notes>See also {balre}, {dakfu}, {jesni}.</notes></valsi>
 
@@ -3602,6 +3636,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="kukte" type="gismu"><rafsi>kuk</rafsi><definition>$x_{1}$ is delicious/tasty/delightful to observer/sense $x_{2}$ [person, or sensory activity].</definition><notes>$x_1$ is a delicacy.  See also {gusta}, {ralci}, {vrusi}, {cpina}.</notes></valsi>
 
+<valsi word="kulmu'o" type="lujvo"><definition>$k_4=m_1$ graduates/completes coursework from $k_1$ at location $k_2$ in subject matter $k_3$, by the standards of  the administration $k_5=m_3$</definition><notes>This is really a dropped SE of velkulmu'o.  m2 is the implied "property of learning at k2 subject matter k3 from school k1"</notes></valsi>
+
 <valsi word="kulnrnorge" type="fu'ivla"><definition>$x_1$ is Norwegian/pertains to Norwegian culture in aspect $x_2$.</definition></valsi>
 
 <valsi word="kulnrturkie" type="fu'ivla"><definition>$x_1$ is Turkish/pertains to Turkish culture in aspect $x_2$</definition><notes>c.f. {kulnrturko}</notes></valsi>
@@ -3642,7 +3678,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="kusyja'a" type="lujvo"><definition>$x_{1}$ is a cruel-captain with object of cruelty-captained $x_{2}$.</definition></valsi>
 
-<valsi word="kutyje'u" type="lujvo"><definition>$x1$ a tautology by standard/epistemology/metaphysics $x2$.</definition><notes>See also {kunti}, {jetnu}</notes></valsi>
+<valsi word="kutyje'u" type="lujvo"><definition>$x_1$ a tautology by standard/epistemology/metaphysics $x_2$.</definition><notes>See also {kunti}, {jetnu}</notes></valsi>
 
 <valsi word="kutytu'a" type="lujvo"><definition>$t_1=k_1$ is a desert located in/at $t_2$</definition><notes>from {kunti} {tumla}</notes></valsi>
 
@@ -3758,6 +3794,8 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="lau" type="cmavo"><selmaho>LAU</selmaho><definition>2-word letteral/shift: punctuation mark or special symbol follows.</definition></valsi>
 
+<valsi word="lauDZIS" type="cmene"><definition>Laotze (aka. Laozi)</definition></valsi>
+
 <valsi word="laus" type="cmene"><definition>Laos.</definition><notes>Under some interpretations of the morphology rules, not a valid word.</notes></valsi>
 
 <valsi word="laxma'i" type="lujvo"><definition>$x_1$ is October of year $x_2$ in calendar $x_3$.</definition></valsi>
@@ -3816,7 +3854,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="leko'a" type="cmavo cluster"><selmaho>LE*</selmaho><definition>possessive/associative descriptor: the one(s) described as, of it-1's.</definition></valsi>
 
-<valsi word="lektoni" type="fu'ivla"><definition>$x_1$ is an electron in quantum state $x_2$</definition><notes>c.f. {protoni}, {nurtoni}, {xumsle}, {dicka'u}, {guska'u}. Example. This is an electron with quantum state n=2, l=0, m=-1, s=-1/2. "ti lektoni lo za'i ge ny du li re gi ge ly du li no gi ge my du li ni'u pa gi sy du li ni'u pafi'ure". If numbering convention is accepted, then "ti lektoni li re ce'o no ce'o ni'u pa ce'o ni'u pafi'ure". </notes></valsi>
+<valsi word="lektoni" type="fu'ivla"><definition>$x_1$ is an electron in quantum state $x_2$</definition><notes>Cf. {protoni}, {nurtoni}, {xumsle}, {dicka'u}, {guska'u}. </notes></valsi>
 
 <valsi word="lemi" type="cmavo cluster"><selmaho>LE*</selmaho><definition>possessive/associative descriptor: the one(s) described as, of mine.</definition></valsi>
 
@@ -3954,7 +3992,7 @@ If you are actually translating something with a copyright notice, you should le
 
 <valsi word="lojbo" type="gismu"><rafsi>lob</rafsi><rafsi>jbo</rafsi><definition>$x_{1}$ reflects [Loglandic]/Lojbanic language/culture/nationality/community in aspect $x_{2}$.</definition><notes>Pre-Lojban forms of Loglan (= {dzejbo}). See also {bangu}, {logji}.</notes></valsi>
 
-<valsi word="lojycpa" type="lujvo"><definition>$x1$ infers/concludes/draws conclusion $x2$ from premise $x3$ based on logic/reasoning $x4$</definition><notes>See also: {logji}, {cpacu}</notes></valsi>
+<valsi word="lojycpa" type="lujvo"><definition>$x_1$ infers/concludes/draws conclusion $x_2$ from premise $x_3$ based on logic/reasoning $x_4$</definition><notes>See also: {logji}, {cpacu}</notes></valsi>
 
 <valsi word="loldi" type="gismu"><rafsi>lol</rafsi><rafsi>loi</rafsi><definition>$x_{1}$ is a floor/bottom/ground of $x_{2}$.</definition><notes>Floor/level/story of a building/edifice (= {setloi}, {dijysenta}).  See also {bitmu}, {drudi}, {dertu}, {dizlo}, {cnita}, {zbepi}, {sarji}, {serti}.</notes></valsi>
 
@@ -4132,6 +4170,8 @@ Example: 'This is a ferrous ion' is 'ti ma'uzei ionti lo tirse li re'.</notes></
 
 <valsi word="marnybu'u" type="lujvo"><definition>$b_1$ is canvas made of hemp.</definition><notes>Cf. {marna}, {bukpu}</notes></valsi>
 
+<valsi word="marnyva'u" type="lujvo"><definition>$v_1$ smokes cannabis of type $m_2$.</definition><notes>Cf. {marna}, {vasxu}. See also {damva'u}, {tankyva'u}, {sigva'u}.</notes></valsi>
+
 <valsi word="marxa" type="gismu"><rafsi>max</rafsi><definition>$x_{1}$ [force] mashes/crushes/squashes/smashes $x_{2}$ into pulp/mash/crumbs/deformed mass $x_{3}$.</definition><notes>See also {daspo}, {pesxu}, {zalvi}, {bapli}.</notes></valsi>
 
 <valsi word="masno" type="gismu"><rafsi>sno</rafsi><definition>$x_{1}$ is slow/sluggish at doing/being/bringing about $x_{2}$ (event/state).</definition><notes>See also {sutra}.</notes></valsi>
@@ -4198,7 +4238,7 @@ Example: 'This is a ferrous ion' is 'ti ma'uzei ionti lo tirse li re'.</notes></
 
 <valsi word="medomoi" type="cmavo cluster"><definition>$x_1$ is yours among $x_2$ by rule/relationship $x_3$; $x_1$ is your $x_2$ by rule/relationship $x_3$.</definition></valsi>
 
-<valsi word="megdo" type="gismu"><rafsi>meg</rafsi><definition>$x_{1}$ is a million [1$x_{1}$0**6] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="megdo" type="gismu"><rafsi>meg</rafsi><definition>$x_{1}$ is a million [$10^6$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="mei" type="cmavo"><rafsi>mem</rafsi><rafsi>mei</rafsi><selmaho>MOI</selmaho><definition>convert number to cardinality selbri; $x_{1}$ is the mass formed from set $x_{2}$ whose n member(s) are $x_{3}$.</definition><notes>[x1 is a mass with N components x3 composing set x2; x2 is an n-tuple
 (x2 is completely specified) (= {selmei} for reordered places); x1 forms
@@ -4228,6 +4268,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 <valsi word="menmuvgau" type="lujvo"><definition>$g_1$=$me_1$ telekinetically / with its mind moves $mu_1$ to destination/receiver $mu_2$ [away] from origin $mu_3$ over path/route $mu_4$</definition><notes>Made from {menli}+{muvgau}.  {menli}2 dropped on account of irrelevancy.  See also {gasnu}, {klama}, {litru}, {makfa}, {menli}, {muvdu}.</notes></valsi>
 
 <valsi word="mensi" type="gismu"><rafsi>mes</rafsi><rafsi>me'i</rafsi><definition>$x_{1}$ is a sister of/sororal to $x_{2}$ by bond/tie/standard/parent(s) $x_{3}$; [not necessarily biological].</definition><notes>See also {bruna}, {tunba}, {tamne}, {famti}.</notes></valsi>
+
+<valsi word="menske" type="lujvo"><definition>$s_1$ (mass of facts) is mental science/psychology about subject matter $s_2$ based on methodology $s_3$.</definition><notes>See also {menli}, {saske}, {menmikce}.</notes></valsi>
 
 <valsi word="mentu" type="gismu"><rafsi>met</rafsi><rafsi>me'u</rafsi><definition>$x_{1}$ is $x_{2}$ minutes in duration (default is 1 minute) by standard $x_{3}$.</definition><notes>See also {junla}, {cacra}, {snidu}, {tcika}.</notes></valsi>
 
@@ -4317,7 +4359,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="mikce" type="gismu"><rafsi>mic</rafsi><definition>$x_{1}$ doctors/treats/nurses/[cures]/is physician/midwife to $x_{2}$ for ailment $x_{3}$ by treatment/cure $x_{4}$.</definition><notes>Also medic; (adjective:) $x_1$, $x_4$ is medical; $x_2$ is a patient of $x_1$ (= selmikce for reordered {places}) ; $x_2$ is treated by $x_1$ person/$x_4$ treatment/method; successfully cure transitive (= {sadmikce}, {sadvelmikce}), intransitive (= sadyselmikce, ka'orbi'o to not imply an external agent/process, though the $x_1$ and $x_4$ of mikce may be self/internal); treatment (= {velmikce}).  See also {bilma}, {kanro}, {spita}.</notes></valsi>
 
-<valsi word="mikri" type="gismu"><rafsi>mik</rafsi><definition>$x_{1}$ is a millionth [1$x_{1}$0**-6] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="mikri" type="gismu"><rafsi>mik</rafsi><definition>$x_{1}$ is a millionth [$10^{-6}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="miksini" type="fu'ivla"><definition>$m_1$ is a hagfish of species $m_2$.</definition></valsi>
 
@@ -4327,7 +4369,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="milsnidu" type="lujvo"><definition>$x_1$ is $x_2$ milliseconds in duration.</definition><notes>{milti} {snidu}; the default $x_2$ is 1</notes></valsi>
 
-<valsi word="milti" type="gismu"><rafsi>mil</rafsi><definition>$x_{1}$ is a thousandth [1/1000; 1$x_{1}$0**-3] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="milti" type="gismu"><rafsi>mil</rafsi><definition>$x_{1}$ is a thousandth [1/1000; $10^{-3}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="miltre" type="lujvo"><definition>$mit_1=mil_1$ is $mit_2=mil_1$ (one by default) millimeter(s) in length measured in direction $mit_3$ by standard $mit_4$</definition></valsi>
 
@@ -4603,7 +4645,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="mrobi'o" type="lujvo"><definition>$b_1$ dies under conditions $b_3$.</definition></valsi>
 
-<valsi word="mrodimna" type="lujvo"><definition>$x1$ is mortal/subject to death.</definition><notes>See also {morsi}, {dimna}, {mroka'e}</notes></valsi>
+<valsi word="mrodimna" type="lujvo"><definition>$x_1$ is mortal/subject to death.</definition><notes>See also {morsi}, {dimna}, {mroka'e}</notes></valsi>
 
 <valsi word="mrodri" type="lujvo"><definition>$b_1$ mourns/grieves over the death of $m_1=b_2$ </definition></valsi>
 
@@ -4770,7 +4812,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="nacpoiba'u" type="lujvo"><definition>$b_1$ counts numbers $n_1=p_1$ out aloud.</definition></valsi>
 
-<valsi word="nafselte'i" type="lujvo"><definition>$x1$ is an exception/the only one without property $x2$ among $x3$</definition><notes>See also {natfe}, {selte'i}, {steci}</notes></valsi>
+<valsi word="nafselte'i" type="lujvo"><definition>$x_1$ is an exception/the only one without property $x_2$ among $x_3$</definition><notes>See also {natfe}, {selte'i}, {steci}</notes></valsi>
 
 <valsi word="nagi'a" type="cmavo cluster"><selmaho>GIhA*</selmaho><definition>logical connective: bridi-tail afterthought conditional/only if.</definition></valsi>
 
@@ -4824,6 +4866,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="nanba" type="gismu"><rafsi>nab</rafsi><definition>$x_{1}$ is a quantity of/contains bread [leavened or unleavened] made from grains $x_{2}$.</definition><notes>See also {gurni}, {panlo}, {toknu}.</notes></valsi>
 
+<valsi word="nanbe'o" type="lujvo"><definition>$x_{1}$ reflects Central American culture/nationality/geography in aspect $x_{2}$.</definition><notes>From {snanu}, {bemro}.</notes></valsi>
+
 <valsi word="nanbrmatsa" type="fu'ivla"><definition>$x_1$ is a matzo made from grain $x_2$.</definition><notes>see {fomcau}, {nanba}, {fomymledi}</notes></valsi>
 
 <valsi word="nanca" type="gismu"><rafsi>na'a</rafsi><definition>$x_{1}$ is $x_{2}$ years in duration (default is 1 year) by standard $x_{3}$; (adjective:) $x_{1}$ is annual.</definition><notes>This year (= {cabna'a}); next year (= {bavlamna'a}); last year (= {prulamna'a}).  See also {detri}, {djedi}, {jeftu}, {masti}.</notes></valsi>
@@ -4848,7 +4892,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="nansunsunsnanu" type="lujvo"><definition>$x_1$ is southeast by east of $x_2$ in frame of reference $x_3$.</definition></valsi>
 
-<valsi word="nanvi" type="gismu"><rafsi>nav</rafsi><definition>$x_{1}$ is a billionth/thousand-millionth [1$x_{1}$0**-9] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="nanvi" type="gismu"><rafsi>nav</rafsi><definition>$x_{1}$ is a billionth/thousand-millionth [$10^{-9}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, petso, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="narge" type="gismu"><rafsi>nag</rafsi><definition>$x_{1}$ is a nut [body-part: hard-shelled fruit] from plant/species $x_{2}$ with shell $x_{3}$ and kernel $x_{4}$.</definition><notes>Also $x_4$ nucleus, center (= velnarge for place {reordering}).  See also {grute}, {stagi}, {jbari}, {midju}.</notes></valsi>
 
@@ -4867,6 +4911,10 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 <valsi word="natfe" type="gismu"><rafsi>naf</rafsi><rafsi>na'e</rafsi><definition>$x_{1}$ (du'u) contradicts/denies/refutes/negates $x_{2}$ (du'u) under rules/logic $x_{3}$.</definition><notes>Also exception (= {nafmupli}); agentive contradict/deny (= nafxu'a or {tolxu'a}).  See also {nibli}, {tugni}, {zanru}, {xusra}.</notes></valsi>
 
 <valsi word="natmi" type="gismu"><rafsi>nat</rafsi><rafsi>nai</rafsi><definition>$x_{1}$ is a nation/ethnic group of peoples $x_{2}$; [people sharing a history/culture].</definition><notes>See also {jecta}, {kulnu}, {lanzu}, {gugde}, {bangu}, {cecmu}.</notes></valsi>
+
+<valsi word="natpa'i" type="lujvo"><definition>$p_1$ loves/feels strong affectionate devotion towards the nation/ethnic group $n_2$; $p_1$ is a patriot/nationalist</definition><notes>From {natmi}, {prami}.  Cf. {natpamtrusi'o}.</notes></valsi>
+
+<valsi word="natpamtrusi'o" type="lujvo"><definition>$s_1$ is a nationalist political ideology as applied by $t_1=p_1$ among/in people/territory/domain $t_2$ based on the works of thinker $s_3$</definition><notes>From {natmi}, {prami}, {turni}, {sidbo}. Cf. {natpa'i}, {trudjigri}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
 
 <valsi word="nau" type="cmavo"><selmaho>CUhE</selmaho><definition>tense: refers to current space/time reference absolutely.</definition></valsi>
 
@@ -4914,7 +4962,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="nercreka" type="lujvo"><definition>$c_1$ is a singlet/undershirt/vest of material $c_2$.</definition></valsi>
 
-<valsi word="nerkalri" type="lujvo"><definition>$x1_1$ is an entrance/entry/entryway/inlet/way in to $x_2$ for $x_3$ .</definition><notes>See also {nerkla}</notes></valsi>
+<valsi word="nerkalri" type="lujvo"><definition>$x_1$ is an entrance/entry/entryway/inlet/way in to $x_2$ for $x_3$ .</definition><notes>See also {nerkla}</notes></valsi>
 
 <valsi word="nerkla" type="lujvo"><definition>$n_1=k_1$ enters $n_2=k_2$ from origin $k_3$ via route $k_4$ using means/vehicle $k_5$.</definition></valsi>
 
@@ -5094,7 +5142,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="nurma" type="gismu"><rafsi>num</rafsi><definition>$x_{1}$ is a rural/rustic/pastoral area of $x_{2}$; $x_{1}$ is in the country.</definition><notes>See also {jarbu}, {rarna}, {tcadu}, {cange}.</notes></valsi>
 
-<valsi word="nurtoni" type="fu'ivla"><definition>$x_1$ is a neutron in quantum state $x_2$</definition><notes>c.f. {lektoni}, {protoni}, {xumsle}.</notes></valsi>
+<valsi word="nurtoni" type="fu'ivla"><definition>$x_1$ is a neutron in quantum state $x_2$</definition><notes>Cf. {lektoni}, {protoni}, {xumsle}.</notes></valsi>
 
 <valsi word="nurxru" type="lujvo"><definition>$x_1$ saves/rescues/redeems/delivers $x_2$=$s_1$ from threat/peril $s_2$ </definition></valsi>
 
@@ -5342,6 +5390,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="paxa" type="cmavo cluster"><selmaho>PA*</selmaho><definition>number/quantity: 16 [sixteen].</definition></valsi>
 
+<valsi word="paxrmari" type="fu'ivla"><definition>$p_1$ is a double boiler/bain-marie containing $p_2$ made of $p_3$</definition></valsi>
+
 <valsi word="paze" type="cmavo cluster"><selmaho>PA*</selmaho><definition>number/quantity: 17 [seventeen].</definition></valsi>
 
 <valsi word="pe" type="cmavo"><selmaho>GOI</selmaho><definition>restrictive relative phrase marker: which is associated with ...; loosest associative/possessive.</definition></valsi>
@@ -5365,6 +5415,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 <valsi word="peisku" type="lujvo"><definition>$p_1=c_1$ thinks thought $c_2=p_2$ (sedu'u/text/lu'e concept).</definition><notes>Verbal or near-verbal expression of a thought; internal monologue.  Made from {pensi} + {cusku}.</notes></valsi>
 
 <valsi word="pejgau" type="lujvo"><definition>$p_1$ (agent) spreads $p_1$ over/into $p_2$ from $p_3$</definition><notes>from {preja} {gasnu} c.f. {tcena} {fatri} {muvdu}.</notes></valsi>
+
+<valsi word="pekin" type="cmene"><definition>Peking</definition></valsi>
 
 <valsi word="pelglar" type="cmene"><definition>yellow fever.</definition></valsi>
 
@@ -5392,7 +5444,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="pesxu" type="gismu"><rafsi>pex</rafsi><definition>$x_{1}$ is paste/pulp/dough/mash/mud/slurry [soft, smooth-textured, moist solid] of composition $x_{2}$.</definition><notes>$x_2$: composition including $x_2$, which need not be complete specification.  See also {marxa}, {kliti}, {tarla}.</notes></valsi>
 
-<valsi word="petso" type="gismu"><rafsi>pet</rafsi><definition>$x_{1}$ is 1$x_{1}$0**15 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="petso" type="gismu"><rafsi>pet</rafsi><definition>$x_{1}$ is $10^{15}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, picti, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="pezli" type="gismu"><rafsi>pez</rafsi><definition>$x_{1}$ is a leaf of plant $x_{2}$; $x_{1}$ is foliage of $x_{2}$.</definition><notes>See also {tricu}, {papri}, {spati}.</notes></valsi>
 
@@ -5410,7 +5462,7 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="pi'u" type="cmavo"><rafsi>piv</rafsi><selmaho>JOI</selmaho><definition>non-logical connective: cross product; Cartesian product of sets.</definition></valsi>
 
-<valsi word="picti" type="gismu"><rafsi>pic</rafsi><definition>$x_{1}$ is a trillionth [1$x_{1}$0**-12] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="picti" type="gismu"><rafsi>pic</rafsi><definition>$x_{1}$ is a trillionth [$10^{-12}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, terto, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="pidu'e" type="cmavo cluster"><selmaho>PA*</selmaho><definition>number: too much of.</definition></valsi>
 
@@ -5500,6 +5552,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="pitnanba" type="lujvo"><definition>$n_1$ is a pizza with topping/ingredients $n_2$</definition></valsi>
 
+<valsi word="piton" type="cmene"><definition>Python.</definition><notes>programming language</notes></valsi>
+
 <valsi word="pixra" type="gismu"><rafsi>pir</rafsi><rafsi>xra</rafsi><definition>$x_{1}$ is a picture/illustration representing/showing $x_{2}$, made by artist $x_{3}$ in medium $x_{4}$.</definition><notes>Also (adjective:) $x_1$ is pictorial/illustrative; drawing (= {xraselci'a}), $x_1$ draws $x_2$ (= xraci'a/xraci'a), image (= {xratai}), photo (= {kacmyxra}), take a photo (= {kacmyterxra}, {kacmyxragau}, {kacmyxrazu'e}); sculpture, relief (= {blixra}).  See also {ciska}, {cinta}, {prina}, {mupli}, {barna}, {skina}.</notes></valsi>
 
 <valsi word="plana" type="gismu"><definition>$x_{1}$ is plump/fat/obese [excessively thick/bulbous/swollen] by standard $x_{2}$.</definition><notes>See also {cinla}, {rotsu}, {barda}, {punli}, {grasu}.</notes></valsi>
@@ -5566,6 +5620,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="polno" type="gismu"><rafsi>pol</rafsi><definition>$x_{1}$ reflects Polynesian/Oceanian (geographic region) culture/nationality/languages in aspect $x_{2}$.</definition><notes>See also {sralo}, {daplu}, {xamsi}.</notes></valsi>
 
+<valsi word="polskas" type="cmene"><definition>Poland</definition><notes>Cf. {gugdrpolska}.</notes></valsi>
+
 <valsi word="ponbau" type="lujvo"><definition>$p_1=b_1$ is the Japanese language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {ponjo} {bangu}.</notes></valsi>
 
 <valsi word="pongu'e" type="lujvo"><definition>$p_1=g_1$ is Japan</definition><notes>from {ponjo} {gugde}.</notes></valsi>
@@ -5581,6 +5637,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 <valsi word="porsi" type="gismu"><rafsi>por</rafsi><rafsi>poi</rafsi><definition>$x_{1}$ [ordered set] is sequenced/ordered/listed by comparison/rules $x_{2}$ on unordered set $x_{3}$.</definition><notes>Also (adjective:) $x_1$ is serial.  (sets are completely specified); See also cmavo list {po'i}, {lidne}, {liste}, {cmima}.</notes></valsi>
 
 <valsi word="porto" type="gismu"><rafsi>pot</rafsi><definition>$x_{1}$ reflects Portuguese culture/nationality/language in aspect $x_{2}$.</definition><notes>See also {brazo}.</notes></valsi>
+
+<valsi word="posydi'a" type="lujvo"><definition>$d_1$ is the price of possessing/owning object $d_2=p_2$ for potential owner $d_3=p_1$ from vendor $d_4$ under law/custom $p_3$</definition><notes>{ponse}+{jdima}. This variant of {jdima} is pedantically semantic distinction between the price of "ownership" of an object rather than the price of the object itself.</notes></valsi>
 
 <valsi word="potybau" type="lujvo"><definition>$p_1=b_1$ is the Portuguese language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {porto} {bangu} c.f. {razbau}</notes></valsi>
 
@@ -5608,9 +5666,8 @@ members of x2]; See also {cmima}, {gunma}, cmavo list {moi}.</notes></valsi>
 
 <valsi word="prosa" type="gismu"><rafsi>ros</rafsi><rafsi>ro'a</rafsi><definition>$x_{1}$ is prose about plot/theme/subject $x_{2}$ by author $x_{3}$ for intended audience $x_{4}$.</definition><notes>Non-poetic written text, without intentional rhyme or meter; $x_2$ may be a convention rather than a subject.  See also {cfika}, {lisri}, {cukta}, {pemci}, {finti}.</notes></valsi>
 
-<valsi word="protoni" type="fu'ivla"><definition> $x_1$ is a proton in quantum state $x_2$</definition><notes>c.f. {lektoni}, {nurtoni}, {xumsle}.
+<valsi word="protoni" type="fu'ivla"><definition> $x_1$ is a proton in quantum state $x_2$</definition><notes>Cf. {lektoni}, {nurtoni}, {xumsle}.
 
-Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni lo za'i ge ny du li ci gi ge ly du li pa gi ge sy du li ma'u pafi'ure gi jy du li no".  If numbering convention is accepted, then "ti protoni li ci ce'o pa ce'o ma'u pafi'ure ce'o no".
 </notes></valsi>
 
 <valsi word="pruce" type="gismu"><rafsi>ruc</rafsi><rafsi>ru'e</rafsi><definition>$x_{1}$ is a process with inputs $x_{2}$, outputs/results $x_{3}$, passing through steps/stages $x_{4}$.</definition><notes>$x_2$ resource (= selru'e, but also ru'etci, (ru'er-/ruc- or selru'e-/selruc- modifying:) selxaksu, selsabji, livla).  See also cmavo list {pu'e}, {farvi}, {tadji}, {grute}, {tcini}.</notes></valsi>
@@ -5717,7 +5774,7 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="ractu" type="gismu"><definition>$x_{1}$ is a rabbit/hare/[doe] of species/breed $x_{2}$.</definition><notes>See also {mabru}, {kerlo}.</notes></valsi>
 
-<valsi word="radji'i" type="lujvo"><definition>$x1$ admits/accepts/acknowledges/allows/concedes/recognizes that $x2$ is true about $x3$ on grounds/under compelling evidence $x4$</definition><notes>See also {randa}, {jinvi}</notes></valsi>
+<valsi word="radji'i" type="lujvo"><definition>$x_1$ admits/accepts/acknowledges/allows/concedes/recognizes that $x_2$ is true about $x_3$ on grounds/under compelling evidence $x_4$</definition><notes>See also {randa}, {jinvi}</notes></valsi>
 
 <valsi word="radno" type="gismu"><rafsi>ra'o</rafsi><definition>$x_{1}$ is $x_{2}$ radian(s) [metric unit] in angular measure (default is 1) by standard $x_{3}$.</definition><notes>Measured in degrees ({julra'o}); right ascension astronomical measurement. (= {cacryra'o}).  See also {jganu}, {kilto}, {centi}, {decti}, {dekto}, {femti}, {gigdo}, {gocti}, {gotro}, {gutci}, {litce}, {megdo}, {mikri}, {milti}, {minli}, {nanvi}, {petso}, {picti}, {terto}, {xatsi}, {xecto}, {xexso}, {zepti}, {zetro}.</notes></valsi>
 
@@ -6182,6 +6239,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="samselpla" type="lujvo"><definition>$x_1=p_2$ is computer program source code created by $x_2=p_1$ with intended result (state/process) $x_3=p_3=s_2$ on computer $x_4=s_1$.</definition><notes>See also {samru'e}.</notes></valsi>
 
+<valsi word="samske" type="lujvo"><definition>$x_{1}$ is computer science with science methodology $x_{2}$.</definition></valsi>
+
 <valsi word="samta'a" type="lujvo"><definition>$t_1$ talks via computer to $t_2$ about $t_3$ in language $t_4$.</definition></valsi>
 
 <valsi word="samtci" type="lujvo"><definition>$t_1$ is a computer program / tool / application for purpose $t_2=s_2$ on computer(s) including $s_1$.</definition></valsi>
@@ -6588,6 +6647,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="selfityjbu" type="lujvo"><definition>$j_1$ is an altar for offering $f_2$ to $f_3$.</definition></valsi>
 
+<valsi word="selfri" type="lujvo"><definition>$x_{1}$ is an event/experience happening to $x_{2}$.</definition></valsi>
+
 <valsi word="selfu" type="gismu"><rafsi>sef</rafsi><rafsi>se'u</rafsi><definition>$x_{1}$ (agent) serves $x_{2}$ with service $x_{3}$ (activity); $x_{1}$ is a servant (noun) of $x_{2}$ performing $x_{3}$.</definition><notes>See also {sidju}, {sarji}, {gunka}.</notes></valsi>
 
 <valsi word="seli'e" type="cmavo cluster"><selmaho>BAI*</selmaho><definition>lidne modal, 2nd place                            preceding ...;leading ... ; non-time sequence.</definition></valsi>
@@ -6618,6 +6679,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="selna'a" type="lujvo"><definition>$x_2=n_1$ is $x_1=n_2$ years in duration by standard $x_3=n_3$.</definition><notes>{se} {nanca}</notes></valsi>
 
+<valsi word="selnai" type="lujvo"><definition>$x_{1}$ is a people of nation with nation $x_{2}$.</definition></valsi>
+
 <valsi word="selne'i" type="lujvo"><definition>$x_{1}$ contains/has inside it $x_{2}$.</definition></valsi>
 
 <valsi word="selnei" type="lujvo"><definition>$x_1$ is liked by $x_2$.</definition><notes>{se} {nelci}</notes></valsi>
@@ -6630,7 +6693,7 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="selpinxe" type="lujvo"><definition>$x_2=p_1$ (agent) drinks/imbibes beverage/drink/liquid refreshment $x_1=p_2$ from/out-of container/source $x_3=p_3$.</definition><notes>{se} {pinxe}</notes></valsi>
 
-<valsi word="selplijibri" type="lujvo"><definition>$x1=j1$ is an employment of / a job held by $x2=j2=p2$ who is employed by $x3=p1$ for purpose $x4=p3$.</definition><notes>See also {pilno}, {jibri}.</notes></valsi>
+<valsi word="selplijibri" type="lujvo"><definition>$x_1=j_1$ is an employment of / a job held by $x_2=j_2=p_2$ who is employed by $x_3=p_1$ for purpose $x_4=p_3$.</definition><notes>See also {pilno}, {jibri}.</notes></valsi>
 
 <valsi word="selplirai" type="lujvo"><definition>$x_1$ is most used/most useful among $x_2$ by $x_3$ for purpose $x_4$.</definition></valsi>
 
@@ -6767,6 +6830,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="seri'i" type="cmavo cluster"><selmaho>BAI*</selmaho><definition>lifri modal, 2nd place                            experiencing ...; undergoing ...</definition></valsi>
 
+<valsi word="serlaximorfa" type="fu'ivla"><definition>$s_1$ is a shark of species $s_2$.</definition><notes>See also {finpe}.</notes></valsi>
+
 <valsi word="serti" type="gismu"><rafsi>ser</rafsi><definition>$x_{1}$ are stairs/stairway/steps for climbing structure $x_{2}$ with steps $x_{3}$.</definition><notes>See also {stapa}, {loldi}, {senta}.</notes></valsi>
 
 <valsi word="sesau" type="cmavo cluster"><selmaho>BAI*</selmaho><definition>sarcu modal, 2nd place (process)                  necessarily; necessary for ...</definition></valsi>
@@ -6859,6 +6924,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="sigja" type="gismu"><rafsi>sig</rafsi><definition>$x_{1}$ is a cigar/cigarette/cigarillo made from tobacco/smokable substance $x_{2}$ by $x_{3}$.</definition><notes>See also {danmo}, {jelca}, {tanko}, {marna}.</notes></valsi>
 
+<valsi word="sigva'u" type="lujvo"><definition>$v_1$ is a cigarette/cigar smoker; $v_1$ smokes cigarettes/cigars.</definition><notes>Cf. {sigja}, {vasxu}. See also {tankyva'u}, {damva'u}, {marnyva'u}.</notes></valsi>
+
 <valsi word="silka" type="gismu"><rafsi>sik</rafsi><definition>$x_{1}$ is a quantity of/contains/is made of silk produced by $x_{2}$.</definition><notes>See also {curnu}, {bukpu}, {cilta}.</notes></valsi>
 
 <valsi word="silna" type="gismu"><definition>$x_{1}$ is a portion/quantity of salt from source $x_{2}$, of composition including $x_{3}$.</definition><notes>See also {sakta}.</notes></valsi>
@@ -6908,6 +6975,8 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 <valsi word="sitna" type="gismu"><rafsi>sit</rafsi><definition>$x_{1}$ cites/quotes/refers to/makes reference to source $x_{2}$ for information/statement $x_{3}$ (du'u).</definition><notes>See also {krasi}.</notes></valsi>
 
 <valsi word="sivni" type="gismu"><rafsi>siv</rafsi><definition>$x_{1}$ is private/personal/privy/[secret/confidential/confined] to $x_{2}$; $x_{1}$ is not-public/hidden.</definition><notes>Also: $x_1$ is secret (one sense); $x_2$ is in the know/in touch with/privy to $x_1$ (= selsivni for reordered {places}); exclusion can be expressed by na'e(bo) in $x_2$: excluded/in the dark (= {nalselsivni}).  See also {gubni}, {mipri}.</notes></valsi>
+
+<valsi word="sivypo'eci'e" type="lujvo"><definition>$c_1$ is capitalism as practiced by $p_1=s_2$</definition><notes>From {sivni}, {ponse}, {ciste}. Cf. {guntrusi'o}, {fairpaltrusi'o}.</notes></valsi>
 
 <valsi word="skaci" type="gismu"><definition>$x_{1}$ is a skirt/kilt/dress of material $x_{2}$; $x_{1}$ is skirted [garment open at the bottom; not legged].</definition><notes>A skirted garment may be full length (pastu), but must hang below the waist from support above or at the waist.  See also {taxfu}, {palku}.</notes></valsi>
 
@@ -7183,7 +7252,7 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="sralo" type="gismu"><definition>$x_{1}$ reflects Australian culture/nationality/geography/dialect in aspect $x_{2}$.</definition><notes>See also {glico}.</notes></valsi>
 
-<valsi word="sralybau" type="lujvo"><definition>$s_1=b_1$ is the Indian English language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {sralo} {bangu} c.f. {glibau}</notes></valsi>
+<valsi word="sralybau" type="lujvo"><definition>$s_1=b_1$ is the Australian English language used by $b_2$ to express/communicate $b_3$ (si'o/du'u, not quote).</definition><notes>from {sralo} {bangu} c.f. {glibau}</notes></valsi>
 
 <valsi word="sralygu'e" type="lujvo"><definition>$s_1=g_1$ is Australia</definition><notes>from {sralo} {gugde} c.f. {sralytu'a}</notes></valsi>
 
@@ -7305,7 +7374,7 @@ Example.  This is a proton with quantum state n=3, l=1, s=+1/2, j=0. "ti protoni
 
 <valsi word="sunla" type="gismu"><rafsi>sul</rafsi><definition>$x_{1}$ is a quantity of/made from/consists of wool [tight curly hair] from animal/species/source $x_{2}$.</definition><notes>See also {kosta}, {kumte}, {lanme}, {kanba}, {bukpu}, {kerfa}.</notes></valsi>
 
-<valsi word="sunsicyjudri" type="lujvo"><definition>$j_1$ is the longitude/right ascension of $j_2$ in system $j_3$</definition><notes>from {stuna} {stici} {judri}  c.f. {bernanjudri} {plinyxabykoi} {jedjipli'i} {julra'o} {cacryra'o}.    Example: "la.torontos. se sunsicyjudri lo julra'o be li zeso pi'e revo bei vu'a" means "Toronto has a longitude 79° 24' W".</notes></valsi>
+<valsi word="sunsicyjudri" type="lujvo"><definition>$j_1$ is the longitude/right ascension of $j_2$ in system $j_3$</definition><notes>From {stuna}, {stici}, {judri},  Cf. {bernanjudri}, {plinyxabykoi}, {jedjipli'i}, {julra'o}, {cacryra'o}.    </notes></valsi>
 
 <valsi word="suomen" type="cmene"><definition>Finland.</definition></valsi>
 
@@ -7376,6 +7445,10 @@ This word was invented by xorxes and is intended as an alternative to quantified
 
 <valsi word="tai" type="cmavo"><selmaho>BAI</selmaho><definition>tamsmi modal, 1st place (like)/(in manner 2)      resembling ...; sharing ideal form ...</definition><notes>{tamsmi} is $x_1$ resembles $x_2$ sharing ideal form/shape $x_3$ in property $x_4$</notes></valsi>
 
+<valsi word="tai,UAN" type="cmene"><definition>Taiwan</definition></valsi>
+
+<valsi word="taibeis" type="cmene"><definition>Taipei</definition></valsi>
+
 <valsi word="tairmupli" type="lujvo"><definition>$m_1$=$t_2$ is a $t_1$ form of $m_3$</definition></valsi>
 
 <valsi word="taiske" type="lujvo"><definition>$x_1$ is the morphology of $x_2$ according to methodology $x_3$.</definition><notes>see also {rafske}</notes></valsi>
@@ -7422,7 +7495,7 @@ This word was invented by xorxes and is intended as an alternative to quantified
 
 <valsi word="tarbyskori" type="lujvo"><definition>$s_1$ is the/a umbilical cord connecting $t_1=x_2$ to mother $t_2=x_3$.</definition><notes>Cf. {tarbi}, {skori}</notes></valsi>
 
-<valsi word="tarbyvi'u" type="lujvo"><definition>$v_1$ performs abortion of embryo/zygote/fetus/fertilized egg $t_1=v_2$ on $t_2=v_3$.</definition><notes>Cf. {tarbi}, {vimcu}. Abortion = {nuntarbyvi'u}.</notes></valsi>
+<valsi word="tarbyvi'u" type="lujvo"><definition>$v_1$ performs abortion/induces delivery of embryo/zygote/fetus/fertilized egg $t_1=v_2$ on $t_2=v_3$.  (The survival/death of $t_1=v_2$ is not implied.)</definition><notes>Cf. {tarbi}, {vimcu}. Abortion/Inducement = {nuntarbyvi'u}.</notes></valsi>
 
 <valsi word="tarci" type="gismu"><rafsi>tar</rafsi><definition>$x_{1}$ is a star/sun with stellar properties $x_{2}$.</definition><notes>See also {solri}, {tsani}.</notes></valsi>
 
@@ -7765,7 +7838,7 @@ This word was invented by xorxes and is intended as an alternative to quantified
 
 <valsi word="terspe" type="lujvo"><definition>$x_1$ is a marriage tradition/custom/law according to which $x_2$ is married to $x_3$.</definition></valsi>
 
-<valsi word="terto" type="gismu"><rafsi>tet</rafsi><definition>$x_{1}$ is a trillion [1$x_{1}$0**12] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="terto" type="gismu"><rafsi>tet</rafsi><definition>$x_{1}$ is a trillion [$10^{12}$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, xatsi, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="tervai" type="lujvo"><definition>$x_3=v_1$ (object/event) is important/significant to $x_2=v_2$ (person/event) in aspect/for reason $x_1=v_3$ (nu/ka).</definition><notes>{te} {vajni}</notes></valsi>
 
@@ -7990,17 +8063,25 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="tropaiolo" type="fu'ivla"><definition>$x_1$ is a nasturtium of species $x_2$.</definition></valsi>
 
+<valsi word="troroltruci'e" type="lujvo"><definition>$c_1$ is a totalitarian system in $j_2$ with power exercised by $t_1=t_1$</definition><notes>From {jitro}, {ro}, {turni}. Cf. {ka'irtrusi'o}.</notes></valsi>
+
 <valsi word="trucau" type="lujvo"><definition>$c_1$ is an anarchy/is anarchic</definition></valsi>
 
-<valsi word="truci'e" type="lujvo"><definition>$c_1=t_1$ is the government of organizational type $c_2$ of people/territory/domain/subjects $t_2$ displaying properties $c_4$</definition><notes>from {turni} {ciste} c.f. {zuktruci'e} {flatruci'e} {pairtruci'e} {flacfatrugri} {flazautrugri}</notes></valsi>
+<valsi word="truci'e" type="lujvo"><definition>$c_1=t_1$ is the government of organizational type $c_2$ of people/territory/domain/subjects $t_2$ displaying properties $c_4$</definition><notes>From {turni}, {ciste}. Cf. {zuktruci'e}, {flatruci'e}, {pairtruci'e}, {flacfatrugri}, {flazautrugri}, {trupau}, {trupausle}.</notes></valsi>
+
+<valsi word="trudjigri" type="lujvo"><definition>$g_1=d_1=t_1$ is a political party operating in territory $t_2$ with members $g_3$</definition><notes>From {turni}, {djica}, {girzu}.  Cf. {trusi'o}, {truci'e}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
 
 <valsi word="trueno" type="fu'ivla"><definition>$t_1$ is a privet of species $t_2$.</definition></valsi>
 
-<valsi word="trupau" type="lujvo"><definition>$p_1$ is a government ministry/department responsible for $t_2$.</definition><notes>From {turni} {pagbu}. Cf. {truci'e}, {zuktruci'e}, {trupauja'a}.</notes></valsi>
+<valsi word="trupau" type="lujvo"><definition>$p_1$ is a government ministry/department responsible for $t_2$.</definition><notes>From {turni} {pagbu}. Cf. {truci'e}, {trupausle}, {zuktruci'e}, {trupauja'a}.</notes></valsi>
 
 <valsi word="trupauja'a" type="lujvo"><definition>$r_1$ is the minister/secretary of ministry/department $t_2$</definition><notes>From {turni} {pagbu} {jatna}. Cf. {trupau}, {truralju}.</notes></valsi>
 
+<valsi word="trupausle" type="lujvo"><definition>$s_1$ trupausle $t_2$</definition><notes>From {turni}, {pagbu}, {selci}.  Cf. {trupau}, {truci'e}.</notes></valsi>
+
 <valsi word="truralju" type="lujvo"><definition>$r_1$ is the head-of-government of polity $t_2$</definition><notes>from {turni} {ralju} c.f. {nolraitru} {vliraitru} {viptru} {gugja'a} {trupauja'a}.  </notes></valsi>
+
+<valsi word="trusi'o" type="lujvo"><definition>$s_1$ is a political ideology about $t_1$ ruling $t_2$ based on the work of thinker $s_3$</definition><notes>From {turni}, {sidbo}.  Cf. {truci'e}, {trudjigri}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
 
 <valsi word="truspe" type="lujvo"><definition>$x_1$ is married to the governor/ruler of $x_2$ according to custom $x_3$; $x_1$ is first lady/prince consort/queen consort of $x_2$.</definition></valsi>
 
@@ -8015,6 +8096,8 @@ See also {daskymabru}.</notes></valsi>
 <valsi word="tsapi" type="gismu"><definition>$x_{1}$ is a seasoning/condiment/spice causing flavor/effect $x_{2}$ (event/property).</definition><notes>Also: $x_1$ flavors $x_2$ (tu'a).  See also {vrusi}.</notes></valsi>
 
 <valsi word="tsaprpiperi" type="fu'ivla"><definition>$x_1$ is pepper (''Piper'') with flavor $x_2$.</definition><notes>see also {spatrpiperi}</notes></valsi>
+
+<valsi word="tsarainaitrusi'o" type="lujvo"><definition>$s_1$ is a fascist ideology as applied by $t_1$ among/in people/territory/domain $t_2$ based on the works of thinker $s_3$</definition><notes>From {tsali}, {traji}, {natmi}, {turni}, {sidbo}. Cf. {trudjigri}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {vricykricrutrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}.</notes></valsi>
 
 <valsi word="tsasmani" type="lujvo"><definition>$s_1$ is a gorilla of species/subspecies $s_2$.</definition></valsi>
 
@@ -8083,6 +8166,8 @@ See also {daskymabru}.</notes></valsi>
 <valsi word="tutske" type="lujvo"><definition>$s_1$ is geography based on methodology $s_3$.</definition></valsi>
 
 <valsi word="ty" type="cmavo"><selmaho>BY2</selmaho><definition>letteral for t.</definition></valsi>
+
+<valsi word="tyrontos" type="cmene"><definition>Toronto</definition></valsi>
 
 <valsi word="u" type="cmavo"><selmaho>A</selmaho><definition>logical connective: sumti afterthought whether-or-not.</definition></valsi>
 
@@ -8195,6 +8280,8 @@ See also {daskymabru}.</notes></valsi>
 <valsi word="vanjba" type="lujvo"><definition>$x_1$ is a grape of species/variety $x_2$.</definition></valsi>
 
 <valsi word="vanju" type="gismu"><rafsi>van</rafsi><definition>$x_{1}$ is made of/contains/is a quantity of wine from fruit/grapes $x_{2}$.</definition><notes>See also {barja}, {birje}, {xalka}, {jikru}, {fusra}.</notes></valsi>
+
+<valsi word="varcavas" type="cmene"><definition>Warsaw</definition></valsi>
 
 <valsi word="varkiclaflo'i" type="lujvo"><definition>$x_1$ is a hovercraft for carrying $x_2$, propelled by $x_3$, riding on/lifted by $x_4$.</definition><notes>see also {varkiclafti}</notes></valsi>
 
@@ -8354,6 +8441,8 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="viska" type="gismu"><rafsi>vis</rafsi><rafsi>vi'a</rafsi><definition>$x_{1}$ sees/views/perceives visually $x_{2}$ under conditions $x_{3}$.</definition><notes>Also (adjective:) $x_1$ is visual; $x_3$ can include ambient lighting, background, etc. which may affect what is perceived; note that English "see" often means "look" or a more generic "observe", or even "understand, know".  See also {catlu}, {jvinu}, {kanla}, {minra}, {simlu}, {djuno}, {jimpe}, {zgana}, {ganse}.</notes></valsi>
 
+<valsi word="visnda" type="fu'ivla"><definition>$x_1$ is a bison of species $x_2$</definition></valsi>
+
 <valsi word="vitci" type="gismu"><rafsi>vit</rafsi><definition>$x_{1}$ is irregular/occasional/intermittent in property/action/aspect $x_{2}$.</definition><notes>See also {ranji}, {rufsu}, {suksa}.</notes></valsi>
 
 <valsi word="vitke" type="gismu"><rafsi>vi'e</rafsi><definition>$x_{1}$ is a guest/visitor of $x_{2}$ at place/event $x_{3}$; $x_{1}$ visits $x_{2}$/$x_{3}$.</definition><notes>See also {friti}, {klama}, {zasni}, {xabju}, {zvati}.</notes></valsi>
@@ -8416,7 +8505,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="vomoi" type="cmavo cluster"><selmaho>MOI*</selmaho><definition>quantified selbri: convert 4 to ordinal selbri; $x_{1}$ is fourth among $x_{2}$ ordered by rule $x_{3}$.</definition></valsi>
 
-<valsi word="vonca'u" type="lujvo"><definition>x1 is a 4-dimensional spacetime/region occupied by x2 .</definition><notes>See also {vi'e}</notes></valsi>
+<valsi word="vonca'u" type="lujvo"><definition>$x_1$ is a 4-dimensional spacetime/region occupied by $x_2$ .</definition><notes>See also {vi'e}</notes></valsi>
 
 <valsi word="vondei" type="lujvo"><definition>$x_1$ is a Thursday of week $x_2$ in calendar $x_3$.</definition></valsi>
 
@@ -8436,6 +8525,8 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="vorme" type="gismu"><rafsi>vor</rafsi><rafsi>vro</rafsi><definition>$x_{1}$ is a doorway/gateway/access way between $x_{2}$ and $x_{3}$ of structure $x_{4}$.</definition><notes>Note: emphasis on route nature; solid door (= vrogai/vrobi'u/vrozu'itci).  See also {canko}, {ganlo}, {kalri}, {murta}, {pagre}, {bitmu}, {kuspe}.</notes></valsi>
 
+<valsi word="vrabatke" type="lujvo"><definition>$b_1=v_1$ is a switch/actuating lever on/for item $b_2$, with purpose $b_3$, made of material $b_4$.</definition><notes>Though there has been a great amount of debate in Lojbanistan over the need for a lujvo as such, I thought I would submit it anyway.</notes></valsi>
+
 <valsi word="vraga" type="gismu"><rafsi>vra</rafsi><definition>$x_{1}$ is a lever [tool] [of apparatus] for doing $x_{2}$ [function/action], with fulcrum $x_{3}$ and arm $x_{4}$.</definition><notes>See also {tutci}, {pulni}.</notes></valsi>
 
 <valsi word="vraike" type="fu'ivla"><definition>$x_1$ is kelp of genus/species $x_2$</definition></valsi>
@@ -8445,6 +8536,10 @@ See also {daskymabru}.</notes></valsi>
 <valsi word="vreta" type="gismu"><rafsi>vre</rafsi><definition>$x_{1}$ lies/rests/reclines/reposes on $x_{2}$; $x_{1}$ is reclining/recumbent/lying on $x_{2}$.</definition><notes>See also {cpana}, {surla}, {zutse}, {ckana}, {lazni}.</notes></valsi>
 
 <valsi word="vrici" type="gismu"><definition>$x_{1}$ (set/mass/ind.) is miscellaneous/various/assorted in property $x_{2}$ (ka).</definition><notes>See also {klesi}, {girzu}, {frica}, {simsa}, {panra}.</notes></valsi>
+
+<valsi word="vricykricru" type="lujvo"><definition>$c_1$ is liberal/open-minded with regard to beliefs $k_2$ about subject $k_3$ under conditions $c_3$</definition><notes>From {vrici}, {krici}, {curmi}. Cf. {dzejdasra}, {vricykricrutrusi'o}.</notes></valsi>
+
+<valsi word="vricykricrutrusi'o" type="lujvo"><definition>$s_1$ is a liberal political ideology as applied by $t_1=c_1$ among/in people/territory/domain $t_2$ based on the works of thinker $si_3$</definition><notes>From {vrici}, {krici}, {curmi}, {turni}, {sidbo}. Cf. {vricykricru}, {ka'irtrusi'o}, {dzejdasratrusi'o}, {fairpaltrusi'o}, {guntrusi'o}, {natpamtrusi'o}, {tsarainaitrusi'o}.</notes></valsi>
 
 <valsi word="vroca'o" type="lujvo"><definition>$c_1=v_1$ is a French window/side-hinged window.</definition><notes>{vorme} {canko}; typically in pairs extending to the floor</notes></valsi>
 
@@ -8586,7 +8681,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="xatra" type="gismu"><rafsi>xa'a</rafsi><definition>$x_{1}$ is a letter/missive/[note] to intended audience $x_{2}$ from author/originator $x_{3}$ with content $x_{4}$.</definition><notes>(cf. notci, which has places in a different order; the emphasis in xatra is on the communication between author and recipient, and not the content, which in a letter may not easily be categorized to a 'subject'; ciska, mrilu, papri)</notes></valsi>
 
-<valsi word="xatsi" type="gismu"><rafsi>xat</rafsi><definition>$x_{1}$ is 1$x_{1}$0**-18 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xecto, xexso, zepti, zetro)</notes></valsi>
+<valsi word="xatsi" type="gismu"><rafsi>xat</rafsi><definition>$x_{1}$ is $10^{-18}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xecto, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="xauzma" type="lujvo"><definition>$xa_1=z_1$ is better than $z_2$ for $xa_2$ by standard $xa_3$, by amount $z_4$.</definition><notes>The {xagmau} form is far more frequently used.</notes></valsi>
 
@@ -8612,7 +8707,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="xebro" type="gismu"><rafsi>xeb</rafsi><rafsi>bro</rafsi><definition>$x_{1}$ reflects Hebrew/Jewish/Israeli culture/nationality/language in aspect $x_{2}$.</definition><notes>See also {filso}.</notes></valsi>
 
-<valsi word="xecto" type="gismu"><rafsi>xet</rafsi><rafsi>cto</rafsi><definition>$x_{1}$ is a hundred [100; 1$x_{1}$0**2] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xexso, zepti, zetro)</notes></valsi>
+<valsi word="xecto" type="gismu"><rafsi>xet</rafsi><rafsi>cto</rafsi><definition>$x_{1}$ is a hundred [100; $10^2$] of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xexso, zepti, zetro)</notes></valsi>
 
 <valsi word="xedja" type="gismu"><rafsi>xej</rafsi><rafsi>xe'a</rafsi><definition>$x_{1}$ is a/the jaw [body-part] of $x_{2}$.</definition><notes>See also {stedu}.</notes></valsi>
 
@@ -8650,7 +8745,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="xenru" type="gismu"><rafsi>xer</rafsi><rafsi>xe'u</rafsi><definition>$x_{1}$ regrets/rues (abstraction) $x_{2}$; $x_{1}$ is regretful/rueful/sorry/[remorseful] about $x_{2}$.</definition><notes>Also: $x_1$ feels remorse about $x_2$ (= {zugyxe'u}).  (cf. cmavo list .u'u, zungi)</notes></valsi>
 
-<valsi word="xexso" type="gismu"><rafsi>xex</rafsi><definition>$x_{1}$ is 1$x_{1}$0**18 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, zepti, zetro)</notes></valsi>
+<valsi word="xexso" type="gismu"><rafsi>xex</rafsi><definition>$x_{1}$ is $10^{18}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, zepti, zetro)</notes></valsi>
 
 <valsi word="xi" type="cmavo"><selmaho>XI</selmaho><definition>subscript; attaches a numer of letteral string following as a subscript onto grammar structures.</definition></valsi>
 
@@ -8888,7 +8983,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="zenono" type="cmavo cluster"><selmaho>PA*</selmaho><definition>number/quantity: 700 [seven hundred].</definition></valsi>
 
-<valsi word="zepti" type="gismu"><rafsi>zep</rafsi><definition>$x_{1}$ is 1$x_{1}$0**-21 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zetro)</notes></valsi>
+<valsi word="zepti" type="gismu"><rafsi>zep</rafsi><definition>$x_{1}$ is $10^{-21}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zetro)</notes></valsi>
 
 <valsi word="zerfu'e" type="lujvo"><definition>$x_1$ is guilty of crime $x_2$ accountable to judge/authority $x_3$.</definition><notes>See also {zekri}, {fuzme}</notes></valsi>
 
@@ -8902,7 +8997,7 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="zernalfu'e" type="lujvo"><definition>$x_1$ is innocent/not guilty of crime $x_2$ accountable to judge/authority $x_3$.</definition><notes>See also {u'unai}, {zerfu'e}</notes></valsi>
 
-<valsi word="zetro" type="gismu"><rafsi>zet</rafsi><definition>$x_{1}$ is 1x10**21 of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti)</notes></valsi>
+<valsi word="zetro" type="gismu"><rafsi>zet</rafsi><definition>$x_{1}$ is $10^{21}$ of $x_{2}$ in dimension/aspect $x_{3}$ (default is units).</definition><notes>(cf. grake, mitre, snidu, stero, delno, molro, kelvo, xampo, gradu. litce, merli, centi, decti, dekto, femti, gigdo, gocti, gotro, kilto, megdo, mikri, milti, nanvi, petso, picti, terto, xatsi, xecto, xexso, zepti)</notes></valsi>
 
 <valsi word="zgana" type="gismu"><rafsi>zga</rafsi><definition>$x_{1}$ observes/[notices]/watches/beholds $x_{2}$ using senses/means $x_{3}$ under conditions $x_{4}$.</definition><notes>Behold/watch/gaze (= {vi'azga}); guard/watchman/sentinel (= {zgaku'i}, {jdeku'i}).  See also cmavo list {ga'a}, {ganse}, {viska}, {catlu}, {tirna}, {pencu}, {sumne}, {kurji}, {canci}, {catlu}, {jarco}, {lanli}, {pinka}, {simlu}.</notes></valsi>
 
@@ -9016,6 +9111,8 @@ See also {daskymabru}.</notes></valsi>
 
 <valsi word="zy" type="cmavo"><selmaho>BY2</selmaho><definition>letteral for z.</definition></valsi></direction><direction from="English" to="lojban">
 
+<nlword word="Ottawa" valsi="OTa,uas" />
+
 <nlword word="Singapore" valsi="SINgapur" />
 
 <nlword word="Flanders" valsi="VLANDeren" />
@@ -9087,8 +9184,6 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="antelope" valsi="antilope" />
 
 <nlword word="Arctic Ocean" valsi="arktik" />
-
-<nlword word="ASCII" valsi="asycy'i'is" />
 
 <nlword word="eagle" valsi="atkuila" />
 
@@ -9247,6 +9342,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="bulb" valsi="balji" />
 
 <nlword word="clove" sense="part of bulb" valsi="baljypau" />
+
+<nlword word="professor" sense="a lecturer in a university" valsi="balkulctu" />
 
 <nlword word="balcony" valsi="balni" />
 
@@ -9475,6 +9572,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="Bangladesh" valsi="begygu'e" />
 
 <nlword word="link more sumti" valsi="bei" />
+
+<nlword word="Beijing" valsi="beiDJIN" />
 
 <nlword word="Pan-American" valsi="bemjoitco" />
 
@@ -10848,6 +10947,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="material" sense="of which chimney is made" valsi="damtubnu" place="2" />
 
+<nlword word="smoke" sense="inhale smoke" valsi="damva'u" place="1" />
+
 <nlword word="hang" valsi="dandu" />
 
 <nlword word="answer" valsi="danfu" />
@@ -11276,6 +11377,12 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="d" valsi="dy" />
 
+<nlword word="conservative" valsi="dzejdasra" />
+
+<nlword word="conservatism" sense="politics" valsi="dzejdasratrusi'o" />
+
+<nlword word="conservative political ideology" valsi="dzejdasratrusi'o" />
+
 <nlword word="Celtic" valsi="dzeko'o" />
 
 <nlword word="elder" valsi="dzena" />
@@ -11379,6 +11486,10 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="extra sumti place" valsi="fai" />
 
 <nlword word="Fido" valsi="faidon" />
+
+<nlword word="socialism" sense="politics" valsi="fairpaltrusi'o" />
+
+<nlword word="socialist political ideology" valsi="fairpaltrusi'o" />
 
 <nlword word="dropped" valsi="falcru" place="2" />
 
@@ -11731,6 +11842,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="rational number" valsi="frinyna'u" />
 
 <nlword word="offer" valsi="friti" />
+
+<nlword word="bandersnatch" valsi="frufengalu" />
 
 <nlword word="frown at" valsi="frufra" />
 
@@ -12180,6 +12293,12 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="attack" valsi="gunta" />
 
+<nlword word="communism" sense="politics" valsi="guntrusi'o" />
+
+<nlword word="Marxist-Leninist ideology" valsi="guntrusi'o" />
+
+<nlword word="Marxism" valsi="guntrusi'o" />
+
 <nlword word="roll" sense="dice" valsi="gurgau" />
 
 <nlword word="grain" valsi="gurni" />
@@ -12482,7 +12601,15 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="decrease" valsi="jdika" />
 
-<nlword word="price" valsi="jdima" />
+<nlword word="purchaser" valsi="jdima" place="3" />
+
+<nlword word="merchandise" sense="object for sale" valsi="jdima" place="2" />
+
+<nlword word="amount" sense="of money" valsi="jdima" place="1" />
+
+<nlword word="price" sense="sum of money" valsi="jdima" place="1" />
+
+<nlword word="vendor" sense="shopkeeper or salesman" valsi="jdima" place="4" />
 
 <nlword word="money" valsi="jdini" />
 
@@ -12900,6 +13027,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="represented by" valsi="ka'i" />
 
+<nlword word="democracy" sense="representative" valsi="ka'irtrusi'o" />
+
+<nlword word="representative democracy" valsi="ka'irtrusi'o" />
+
 <nlword word="imaginary i" valsi="ka'o" />
 
 <nlword word="I know culturally" valsi="ka'u" />
@@ -12972,6 +13103,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="hunt" valsi="kalte" />
 
+<nlword word="society" valsi="kamjikca" />
+
+<nlword word="social" valsi="kamjikca" />
+
 <nlword word="column" sense="pillar" valsi="kamju" />
 
 <nlword word="testing accuracy" sense="knowledge evaluation" valsi="kamjunmre" place="7" />
@@ -13007,6 +13142,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="fatigued" valsi="kamtatpi" place="2" />
 
 <nlword word="fatigue" valsi="kamtatpi" />
+
+<nlword word="liberty" valsi="kamyzi'e" />
 
 <nlword word="goat" valsi="kanba" />
 
@@ -13059,6 +13196,12 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="collar" valsi="karli" />
 
 <nlword word="journal" valsi="karni" />
+
+<nlword word="eggshell" sense="what something hatches from" valsi="karpo'ijbe" place="2" />
+
+<nlword word="hatchling" sense="born from an egg" valsi="karpo'ijbe" place="1" />
+
+<nlword word="hatch" sense="from an egg" valsi="karpo'ijbe" />
 
 <nlword word="safflower" valsi="kartamo" />
 
@@ -13116,6 +13259,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="hair" valsi="kerfa" />
 
+<nlword word="earwax" sense="secreted substance" valsi="kerlakse" place="1" />
+
+<nlword word="cerumen" valsi="kerlakse" />
+
 <nlword word="ear" valsi="kerlo" />
 
 <nlword word="South American" valsi="ketco" />
@@ -13169,6 +13316,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="internet" valsi="kibro" place="1" />
 
 <nlword word="internet aspect" valsi="kibro" place="2" />
+
+<nlword word="blog" sense="internet term" valsi="kibykarni" place="1" />
 
 <nlword word="cushion" valsi="kicne" />
 
@@ -13539,6 +13688,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="lotus" valsi="latna" />
 
 <nlword word="punctuation mark" valsi="lau" />
+
+<nlword word="Laotze" valsi="lauDZIS" />
 
 <nlword word="Laos" valsi="laus" />
 
@@ -14010,6 +14161,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="hemp canvas" valsi="marnybu'u" />
 
+<nlword word="smoke" sense="cannabis" valsi="marnyva'u" place="1" />
+
 <nlword word="mash" valsi="marxa" />
 
 <nlword word="slow" valsi="masno" />
@@ -14139,6 +14292,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="telekinetically" valsi="menmuvgau" />
 
 <nlword word="sister" valsi="mensi" />
+
+<nlword word="psychology" valsi="menske" />
 
 <nlword word="minute" valsi="mentu" />
 
@@ -14271,6 +14426,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="diameter" valsi="mijgresirji" />
 
 <nlword word="doctor" valsi="mikce" />
+
+<nlword word="micro" sense="latin prefix" valsi="mikri" />
 
 <nlword word="1E-6" valsi="mikri" />
 
@@ -14966,6 +15123,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="bread" valsi="nanba" />
 
+<nlword word="Central America" valsi="nanbe'o" />
+
 <nlword word="year" valsi="nanca" />
 
 <nlword word="South African English" sense="language" valsi="nanfi'oglibau" />
@@ -15007,6 +15166,14 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="deny" valsi="natfe" />
 
 <nlword word="nation" valsi="natmi" />
+
+<nlword word="patriot" valsi="natpa'i" />
+
+<nlword word="nationalist" valsi="natpa'i" />
+
+<nlword word="nationalism" sense="politics" valsi="natpamtrusi'o" />
+
+<nlword word="nationalist political ideology" valsi="natpamtrusi'o" />
 
 <nlword word="reference point" valsi="nau" />
 
@@ -15356,8 +15523,6 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="Austria" valsi="osteraix" />
 
-<nlword word="NATO" valsi="otan" />
-
 <nlword word="North-Atlantic Treaty Organization" valsi="otan" />
 
 <nlword word="1" valsi="pa" />
@@ -15562,6 +15727,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="16" valsi="paxa" />
 
+<nlword word="bain-marie" valsi="paxrmari" />
+
+<nlword word="double boiler" valsi="paxrmari" />
+
 <nlword word="17" valsi="paze" />
 
 <nlword word="restrictive phrase" valsi="pe" />
@@ -15605,6 +15774,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="spread" sense="in sense of an agent doing the spreading" valsi="pejgau" />
 
 <nlword word="expand" sense="in sense of an agent doing the expanding" valsi="pejgau" />
+
+<nlword word="Peking" valsi="pekin" />
 
 <nlword word="yellow fever" valsi="pelglar" />
 
@@ -15761,6 +15932,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="pizza" valsi="pitnanba" place="1" />
 
 <nlword word="topping" sense="pizza" valsi="pitnanba" place="2" />
+
+<nlword word="Python" sense="programming language" valsi="piton" />
 
 <nlword word="picture" valsi="pixra" />
 
@@ -16564,6 +16737,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="program" sense="source code" valsi="samselpla" />
 
+<nlword word="computer science" valsi="samske" />
+
 <nlword word="IRC user" valsi="samta'a" />
 
 <nlword word="chat" sense="talk via electronic means" valsi="samta'a" />
@@ -16844,6 +17019,12 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="altar" valsi="selfityjbu" />
 
+<nlword word="happening" valsi="selfri" />
+
+<nlword word="experience" sense="a particular instance of personally encountering or undergoing something" valsi="selfri" place="1" />
+
+<nlword word="experiencer" valsi="selfri" place="2" />
+
 <nlword word="serve" valsi="selfu" />
 
 <nlword word="preceding" valsi="seli'e" />
@@ -17032,6 +17213,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="experiencing" valsi="seri'i" />
 
+<nlword word="shark" sense="animal" valsi="serlaximorfa" place="1" />
+
 <nlword word="stairs" valsi="serti" />
 
 <nlword word="necessary for" valsi="sesau" />
@@ -17150,6 +17333,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="cigar" valsi="sigja" />
 
+<nlword word="smoke" sense="inhale tobacco smoke" valsi="sigva'u" />
+
+<nlword word="smoker" sense="tobacco smoker" valsi="sigva'u" />
+
 <nlword word="silk" valsi="silka" />
 
 <nlword word="salt" valsi="silna" />
@@ -17195,6 +17382,10 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="cite" valsi="sitna" />
 
 <nlword word="private" valsi="sivni" />
+
+<nlword word="market economy" valsi="sivypo'eci'e" />
+
+<nlword word="capitalism" valsi="sivypo'eci'e" />
 
 <nlword word="skirt" valsi="skaci" />
 
@@ -17766,6 +17957,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="in form" valsi="tai" />
 
+<nlword word="Taiwan" valsi="tai,UAN" />
+
+<nlword word="Taipei" valsi="taibeis" />
+
 <nlword word="morphology" sense="general" valsi="taiske" />
 
 <nlword word="tomato" valsi="tamca" />
@@ -17816,9 +18011,13 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="umbilical cord" valsi="tarbyskori" />
 
+<nlword word="induce delivery" sense="cause termination of pregnancy" valsi="tarbyvi'u" />
+
 <nlword word="abort" sense="induce termination of pregnancy" valsi="tarbyvi'u" place="1" />
 
 <nlword word="perform abortion" valsi="tarbyvi'u" />
+
+<nlword word="abort/induce" sense="cause termination of pregnancy" valsi="tarbyvi'u" place="1" />
 
 <nlword word="star" valsi="tarci" />
 
@@ -18456,29 +18655,45 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="Trondheim" valsi="troneim" />
 
+<nlword word="totalitarian system" valsi="troroltruci'e" />
+
+<nlword word="totalitarianism" valsi="troroltruci'e" />
+
 <nlword word="anarchy" sense="a theory that regards the absence of all direct or coercive government as a political ideal" valsi="trucau" />
 
 <nlword word="government" valsi="truci'e" />
 
 <nlword word="regime" valsi="truci'e" />
 
+<nlword word="political party" valsi="trudjigri" />
+
+<nlword word="party" sense="political" valsi="trudjigri" />
+
 <nlword word="privet" valsi="trueno" />
 
 <nlword word="department" sense="of government" valsi="trupau" />
 
-<nlword word="ministry" sense="government" valsi="trupau" />
+<nlword word="ministry" sense="of government" valsi="trupau" />
 
 <nlword word="minister" sense="of government ministry/department" valsi="trupauja'a" />
 
 <nlword word="secretary" sense="of government department" valsi="trupauja'a" />
 
+<nlword word="bureau" sense="of Ministry/Department (USA)" valsi="trupausle" />
+
+<nlword word="agency" sense="of Miinistry/Department (USA)" valsi="trupausle" />
+
 <nlword word="prime minister" valsi="truralju" />
 
 <nlword word="premier" sense="head-of-government" valsi="truralju" />
 
-<nlword word="governor" sense="head-of-government" valsi="truralju" />
+<nlword word="governor" sense="US state" valsi="truralju" />
 
 <nlword word="chief minister" valsi="truralju" />
+
+<nlword word="political theory" valsi="trusi'o" />
+
+<nlword word="ideology" sense="politics" valsi="trusi'o" />
 
 <nlword word="prince consort" valsi="truspe" />
 
@@ -18497,6 +18712,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="seasoning" valsi="tsapi" />
 
 <nlword word="pepper" sense="Piper" valsi="tsaprpiperi" />
+
+<nlword word="fascist" valsi="tsarainaitrusi'o" />
 
 <nlword word="gorilla" valsi="tsasmani" />
 
@@ -18574,6 +18791,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="t" valsi="ty" />
 
+<nlword word="Toronto" valsi="tyrontos" />
+
 <nlword word="sumti whether" valsi="u" />
 
 <nlword word="gain" valsi="u'a" />
@@ -18625,8 +18844,6 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="happiness" valsi="ui" />
 
 <nlword word="happy face" valsi="uibu" />
-
-<nlword word="Wikipedia" valsi="uikipedias" />
 
 <nlword word="Wiki" valsi="uikis" />
 
@@ -18701,6 +18918,8 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="grape" valsi="vanjba" />
 
 <nlword word="wine" valsi="vanju" />
+
+<nlword word="Warsaw" valsi="varcavas" />
 
 <nlword word="hovercraft" valsi="varkiclaflo'i" />
 
@@ -18864,6 +19083,8 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="governor" sense="local representative of monarch or government" valsi="viptru" />
 
+<nlword word="province" sense="in a federation" valsi="vipygu'e" />
+
 <nlword word="federation" valsi="vipygu'e" place="2" />
 
 <nlword word="canton" sense="administrative division" valsi="vipygu'e" />
@@ -18873,6 +19094,10 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="brave" valsi="virnu" />
 
 <nlword word="see" valsi="viska" />
+
+<nlword word="buffalo" sense="bison" valsi="visnda" />
+
+<nlword word="bison" valsi="visnda" />
 
 <nlword word="irregular" valsi="vitci" />
 
@@ -18988,6 +19213,10 @@ See also {daskymabru}.</notes></valsi>
 
 <nlword word="door" valsi="vorme" />
 
+<nlword word="toggle" sense="electronics" valsi="vrabatke" place="2" />
+
+<nlword word="switch" sense="electronics" valsi="vrabatke" place="1" />
+
 <nlword word="lever" valsi="vraga" />
 
 <nlword word="kelp" valsi="vraike" />
@@ -18997,6 +19226,14 @@ See also {daskymabru}.</notes></valsi>
 <nlword word="reclining" valsi="vreta" />
 
 <nlword word="miscellaneous" valsi="vrici" />
+
+<nlword word="open-minded" valsi="vricykricru" />
+
+<nlword word="liberal" sense="open-minded" valsi="vricykricru" />
+
+<nlword word="liberal political ideology" valsi="vricykricrutrusi'o" />
+
+<nlword word="liberalism" sense="politics" valsi="vricykricrutrusi'o" />
 
 <nlword word="French window" valsi="vroca'o" place="1" />
 
