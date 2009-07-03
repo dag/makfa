@@ -263,32 +263,37 @@ class Jbovlaste(callbacks.Plugin):
         Display up to five jbovlaste entries.
         """
         if not entries or ('no-results', True) in opts:
-            irc.reply('no results')
+            if not irc.nested:
+                irc.reply('no results')
         else:
             dupes = entries.split()
             entries = []
             [entries.append(i.replace('.', ' '))
              for i in dupes if i not in entries]
-            for valsi in entries[0:5]:
-                if valsi in self.db:
-                    entry = self.db[valsi]
-                    res = '%s {%s}' % (entry.type, valsi)
-                    if 1 in entry.places:
-                        glo = ['"%s"' % i[0] for i in entry.places[1]]
-                        res = '%s glossing to %s' % (res, ', '.join(glo))
-                    if entry.selmaho:
-                        res = "%s of selma'o %s" % (res, entry.selmaho)
-                    if entry.rafsi:
-                        afx = ', '.join(map(lambda a: '-%s-' % a,
-                                            entry.rafsi))
-                        res = '%s with rafsi %s' % (res, afx)
-                    if entry.definition:
-                        res = '%s   %s' % (res, entry.definition)
-                    if entry.notes:
-                        res = '%s   Notes: %s' % (res, entry.notes)
-                    irc.reply(res.encode('utf-8'))
-                else:
-                    irc.reply('no entry for {%s}' % valsi)
+            if irc.nested:
+                if entries:
+                    irc.reply(' '.join(entries))
+            else:
+                for valsi in entries[0:5]:
+                    if valsi in self.db:
+                        entry = self.db[valsi]
+                        res = '%s {%s}' % (entry.type, valsi)
+                        if 1 in entry.places:
+                            glo = ['"%s"' % i[0] for i in entry.places[1]]
+                            res = '%s glossing to %s' % (res, ', '.join(glo))
+                        if entry.selmaho:
+                            res = "%s of selma'o %s" % (res, entry.selmaho)
+                        if entry.rafsi:
+                            afx = ', '.join(map(lambda a: '-%s-' % a,
+                                                entry.rafsi))
+                            res = '%s with rafsi %s' % (res, afx)
+                        if entry.definition:
+                            res = '%s   %s' % (res, entry.definition)
+                        if entry.notes:
+                            res = '%s   Notes: %s' % (res, entry.notes)
+                        irc.reply(res.encode('utf-8'))
+                    else:
+                        irc.reply('no entry for {%s}' % valsi)
     show = wrap(show, [getopts({'no-results': ''}), optional('text')])
 
 
