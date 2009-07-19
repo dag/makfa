@@ -119,6 +119,20 @@ class Jbofihe(callbacks.Plugin):
             irc.reply('no suggestions')
     jvocuhadju = wrap(jvocuhadju, ['text'])
 
+    def veljvo(self, irc, msg, args, lujvo):
+        pipe = Popen(['decomp', lujvo], stdout=PIPE)
+        res = rstrip(pipe.communicate()[0])
+        if pipe.returncode > 0:
+            if not irc.nested:
+                irc.reply('{%s} is not a lujvo' % lujvo)
+        else:
+            tanru = res.replace('+', ' ')
+            if irc.nested:
+                irc.reply(tanru)
+            else:
+                irc.reply('{%s} is made from the tanru {%s}' % (lujvo, tanru))
+    veljvo = wrap(veljvo, ['text'])
+
 
 Class = Jbofihe
 
