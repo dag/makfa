@@ -1,0 +1,3 @@
+[submodule "vendor/supybot"]
+	path = vendor/supybot
+	url = git://supybot.git.sourceforge.net/gitroot/supybot
