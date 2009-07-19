@@ -48,7 +48,7 @@ class Jbofihe(callbacks.Plugin):
         Analyze text with jbofihe, falls back on cmafihe for
         ungrammatical text.
         """
-        pipe = Popen(['jbofihe', '-x'], stdin=PIPE, stdout=PIPE)
+        pipe = Popen(['jbofihe', '-ie', '-x'], stdin=PIPE, stdout=PIPE)
         result = rstrip(pipe.communicate(text)[0])
         if pipe.returncode > 0:
             pipe = Popen('cmafihe', stdin=PIPE, stdout=PIPE)
