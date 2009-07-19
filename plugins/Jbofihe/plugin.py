@@ -61,7 +61,15 @@ class Jbofihe(callbacks.Plugin):
         
         Strip jbofihe output from everything but glosses.
         """
-        irc.reply(' '.join(re.findall(r'/(.+?)/\W', text)))
+        reg = r'\.?([^ ]+?)\. \/\[NAME\]\/|\[.+? \((.+?)\):\]|/(.+?)/\W'
+        text = ' '.join([(i[0]
+                          if i[0]
+                          else (': '.join([i[1], i[2]]) if i[1] else i[2]))
+                         for i in re.findall(reg, text)])
+        text = re.sub(r'  +', r' ', text)
+        text = re.sub(r'\{(.+?)..}', r'*\1*', text)
+        text = re.sub(r'\?\?(?!\?)', '', text)
+        irc.reply(text)
     glossy = wrap(glossy, ['text'])
 
     def cmafihe(self, irc, msg, args, text):
