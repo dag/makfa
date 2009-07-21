@@ -99,7 +99,7 @@ class Makfa(callbacks.Plugin):
                             if not nick or \
                                ircutils.hostmaskPatternEqual(nick,
                                                              ircmsg.nick):
-                                irc.reply(ircmsg.args[1])
+                                irc.reply(imsg)
                                 return
     lastlojban = wrap(lastlojban, [optional('channel'),
                                    optional('seenNick'),
