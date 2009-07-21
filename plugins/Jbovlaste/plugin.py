@@ -149,7 +149,8 @@ class Jbovlaste(callbacks.Plugin):
             if valsi and valsi[0] in self.db and 1 in self.db[valsi[0]].places:
                 irc.reply(self.db[valsi[0]].places[1][0][0])
         else:
-            L = ['{%s} %s' % (i, ', '.join(['"%s"' % g[0]
+            L = ['{%s} %s' % (i, ', '.join([('"%s" in the sense of "%s"' % g
+                                             if g[1] else '"%s"' % g[0])
                                             for g in self.db[i].places[1]]))
                  for i in valsi if i in self.db and 1 in self.db[i].places]
             if L:
@@ -279,7 +280,8 @@ class Jbovlaste(callbacks.Plugin):
                         entry = self.db[valsi]
                         res = '%s {%s}' % (entry.type, valsi)
                         if 1 in entry.places:
-                            glo = ['"%s"' % i[0] for i in entry.places[1]]
+                            glo = [('"%s" in the sense of "%s"' % i if i[1] else
+                                    '"%s"' % i[0]) for i in entry.places[1]]
                             res = '%s glossing to %s' % (res, ', '.join(glo))
                         if entry.selmaho:
                             res = "%s of selma'o %s" % (res, entry.selmaho)

@@ -16,7 +16,8 @@ class Entry():
 
     def __str__(self):
         if 1 in self.places:
-            places = ['"%s"' % i[0] for i in self.places[1]]
+            places = [('"%s" in the sense of "%s"' % i if i[1] else
+                       '"%s"' % i[0]) for i in self.places[1]]
             return '{%s} %s' % (self.valsi, ', '.join(places))
         else:
             return '{%s}' % self.valsi
