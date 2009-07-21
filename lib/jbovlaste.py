@@ -1,6 +1,30 @@
 from lxml import etree
 import re
 
+_terminators = {'BE': 'BEhO',
+                'PA': 'BOI',
+                'BY': 'BOI',
+                'COI': 'DOhU',
+                'DOI': 'DOhU',
+                'FIhO': 'FEhU',
+                'GOI': 'GEhU',
+                'NU': 'KEI',
+                'KE': 'KEhE',
+                'LE': 'KU',
+                'LA': 'KU',
+                'PEhO': 'KUhE',
+                'NOI': 'KUhO',
+                'LU': 'LIhU',
+                'LI': 'LOhO',
+                'LAhE': 'LUhU',
+                'NAhE+BO': 'LUhU',
+                'ME': 'MEhU',
+                'NUhI': 'NUhU',
+                'SEI': 'SEhU',
+                'SOI': 'SEhU',
+                'TO': 'TOI',
+                'TUhE': 'TUhU',
+                'VEI': 'VEhO'}
 
 class Entry():
 
@@ -13,6 +37,22 @@ class Entry():
         self.definition = definition
         self.notes = notes
         self.places = dict(places)
+        self._terminator = None
+        self._terminates = []
+
+    def terminator(self):
+        if self._terminator:
+            return self._terminator
+        if self.selmaho in _terminators:
+            self._terminator = _terminators[self.selmaho]
+            return self._terminator
+
+    def terminates(self):
+        if self._terminates:
+            return self._terminates
+        self._terminates = [k for k, v in _terminators.iteritems()
+                              if v == self.selmaho]
+        return self._terminates
 
     def __str__(self):
         if 1 in self.places:

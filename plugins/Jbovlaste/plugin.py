@@ -285,6 +285,12 @@ class Jbovlaste(callbacks.Plugin):
                             res = '%s glossing to %s' % (res, ', '.join(glo))
                         if entry.selmaho:
                             res = "%s of selma'o %s" % (res, entry.selmaho)
+                        if entry.terminator():
+                            terminator = entry.terminator()
+                            res = '%s with terminator %s' % (res, terminator)
+                        if entry.terminates():
+                            terminates = ', '.join(entry.terminates())
+                            res = '%s terminating %s' % (res, terminates)
                         if entry.rafsi:
                             afx = ', '.join(map(lambda a: '-%s-' % a,
                                                 entry.rafsi))
