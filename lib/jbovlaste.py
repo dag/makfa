@@ -81,6 +81,10 @@ class Dictionary():
             [results.append(i) for i in dupes if i not in results]
             if like:
                 results.sort(_Damerau(like, results).cmp)
+            elif not results:
+                d = _Damerau(query, self._entries)
+                results = [i for i in self._entries if d.distances[i] < 2]
+                results.sort(d.cmp)
             return results
         else:
             return self.find(**args)
@@ -173,6 +177,7 @@ class Dictionary():
 
     def __len__(self):
         return len(self._entries)
+
 
 class _Damerau():
 
