@@ -84,7 +84,6 @@ class Dictionary():
             elif not results:
                 d = _Damerau(query, self._entries)
                 results = [i for i in self._entries if d.distances[i] < 2]
-                results.sort(d.cmp)
             return results
         else:
             return self.find(**args)
