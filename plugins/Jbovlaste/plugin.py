@@ -139,28 +139,33 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply('no notes')
     notes = wrap(notes, ['text'])
 
-    def gloss(self, irc, msg, args, valsi):
-        """<entry> [entry...]
+    def gloss(self, irc, msg, args, opts, valsi):
+        """[--place <number>] <entry> [entry...]
 
         List gloss words for entries.
         """
+        p = 1
+        for key, val in opts:
+            if key == 'place':
+                p = val
         valsi = valsi.split()
         if irc.nested:
-            if valsi and valsi[0] in self.db and 1 in self.db[valsi[0]].places:
-                irc.reply(self.db[valsi[0]].places[1][0][0])
+            if valsi and valsi[0] in self.db and p in self.db[valsi[0]].places:
+                irc.reply(self.db[valsi[0]].places[p][0][0])
         else:
             L = ['{%s} %s' % (i, ', '.join([('"%s" in the sense of "%s"' % g
                                              if g[1] else '"%s"' % g[0])
-                                            for g in self.db[i].places[1]]))
-                 for i in valsi if i in self.db and 1 in self.db[i].places]
+                                            for g in self.db[i].places[p]]))
+                 for i in valsi if i in self.db and p in self.db[i].places]
             if L:
                 plural = 'entries'
                 if len(L) == 1:
                     plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                res = '%d %s: %s' % (len(L), plural, '; '.join(L))
+                irc.reply(res.encode('utf-8'))
             else:
                 irc.reply('no glosses')
-    gloss = wrap(gloss, ['text'])
+    gloss = wrap(gloss, [getopts({'place': 'positiveInt'}), 'text'])
 
     def type(self, irc, msg, args, valsi):
         """<entry> [entry...]
