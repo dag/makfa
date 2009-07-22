@@ -279,6 +279,9 @@ class Jbovlaste(callbacks.Plugin):
                     if valsi in self.db:
                         entry = self.db[valsi]
                         res = '%s {%s}' % (entry.type, valsi)
+                        if entry.selrafsi:
+                            veljvo = ' '.join(entry.selrafsi)
+                            res = '%s from tanru {%s}' % (res, veljvo)
                         if 1 in entry.places:
                             glo = [('"%s" in the sense of "%s"' % i if i[1] else
                                     '"%s"' % i[0]) for i in entry.places[1]]

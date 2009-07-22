@@ -1,5 +1,8 @@
 from lxml import etree
 import re
+from subprocess import Popen, PIPE
+from string import rstrip
+
 
 _terminators = {'BE': 'BEhO',
                 'PA': 'BOI',
@@ -26,10 +29,11 @@ _terminators = {'BE': 'BEhO',
                 'TUhE': 'TUhU',
                 'VEI': 'VEhO'}
 
+
 class Entry():
 
     def __init__(self, valsi, type, rafsi=[], selmaho=None,
-                 definition=None, notes=None, places={}):
+                 definition=None, notes=None, places={}, selrafsi=[]):
         self.valsi = valsi
         self.type = type
         self.rafsi = list(rafsi)
@@ -37,6 +41,7 @@ class Entry():
         self.definition = definition
         self.notes = notes
         self.places = dict(places)
+        self.selrafsi = list(selrafsi)
         self._terminator = None
         self._terminates = []
 
@@ -72,6 +77,8 @@ class Dictionary():
         self._entries = []
         self._tree = {}
         tree = etree.parse(file)
+        if tree.find('//selrafsi') is None:
+            self._add_selrafsi(tree, file)
         types = ['gismu', 'cmavo', 'cmavo cluster', 'lujvo', "fu'ivla",
                  'experimental gismu', 'experimental cmavo', 'cmene']
         for type in types:
@@ -192,6 +199,19 @@ class Dictionary():
             return res.replace('{', '').replace('}', '')
         return re.sub(r'\$(.+?)\$', f, defn.replace('\n', ' '))
 
+    def _add_selrafsi(self, tree, file):
+        for lujvo in tree.findall('//valsi[@type="lujvo"]'):
+            word = lujvo.get('word')
+            pipe = Popen(['decomp', word], stdout=PIPE)
+            decomp = pipe.communicate()[0]
+            if not pipe.returncode > 0:
+                veljvo = rstrip(decomp).split('+')
+                for selrafsi in veljvo:
+                    element = etree.Element('selrafsi')
+                    element.text = selrafsi
+                    lujvo.append(element)
+        tree.write(file)
+
     def _save(self, valsi):
         word = valsi.get('word')
         self._entries.append(word)
@@ -205,6 +225,8 @@ class Dictionary():
                 self[word].definition = self._prettyplace(child.text)
             elif child.tag == 'notes':
                 self[word].notes = self._prettyplace(child.text)
+            elif child.tag == 'selrafsi':
+                self[word].selrafsi.append(child.text)
 
     def __getitem__(self, key):
         return self._tree[key]
