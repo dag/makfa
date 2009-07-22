@@ -83,7 +83,10 @@ class Dictionary():
                  'experimental gismu', 'experimental cmavo', 'cmene']
         for type in types:
             for valsi in tree.findall('//valsi[@type="%s"]' % type):
+                entries = self._entries
+                self._entries = []
                 self._save(valsi)
+                self._entries = entries + self._entries
         for valsi in tree.findall('//nlword'):
             word = valsi.get('valsi')
             place = int(valsi.get('place') or '1')
