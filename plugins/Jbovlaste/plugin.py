@@ -202,11 +202,9 @@ class Jbovlaste(callbacks.Plugin):
             if key == 'type':
                 type = val
             elif key == 'rafsi':
-                rafsi = []
-                [rafsi.extend(i.split()) for i in val]
+                rafsi = val
             elif key == 'selmaho':
-                selmaho = []
-                [selmaho.extend(i.split()) for i in val]
+                selmaho = val
             elif key == 'definition':
                 definition = val
             elif key == 'notes':
@@ -214,8 +212,7 @@ class Jbovlaste(callbacks.Plugin):
             elif key == 'gloss':
                 gloss = val
             elif key == 'valsi':
-                valsi = []
-                [valsi.extend(i.split()) for i in val]
+                valsi = val
             elif key == 'shuffle':
                 shuffle = val
             elif key == 'limit':
@@ -225,6 +222,15 @@ class Jbovlaste(callbacks.Plugin):
             elif key == 'like':
                 like = val
         if not regexp:
+            L = []
+            [L.extend(i.split()) for i in rafsi]
+            rafsi = L
+            L = []
+            [L.extend(i.split()) for i in selmaho]
+            selmaho = L
+            L = []
+            [L.extend(i.split()) for i in valsi]
+            valsi = L
             valsi = [i.replace('.', ' ') for i in valsi]
         results = self.db.query(type=type, rafsi=rafsi, selmaho=selmaho,
                                 definition=definition, notes=notes,
