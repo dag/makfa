@@ -106,7 +106,7 @@ class Jbofihe(callbacks.Plugin):
         
         Create lujvo from tanru.
         """
-        arglist = ['jvocuhadju']
+        arglist = ['jvocuhadju', '-a', '-l']
         arglist.extend(words.split())
         result = Popen(arglist, stdin=PIPE, stdout=PIPE).communicate()[0]
         lujvo = re.findall(r'^ *\d+ (.+)', result, re.MULTILINE)
