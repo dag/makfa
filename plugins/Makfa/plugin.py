@@ -86,7 +86,7 @@ class Makfa(callbacks.Plugin):
         Get the last Lojban message as determined by potential-percentage.
         """
         if not percent:
-            percent = 60
+            percent = 40
         for ircmsg in reversed(irc.state.history):
             if ircmsg.command == 'PRIVMSG':
                 msgs = [ircmsg.args[1]]
