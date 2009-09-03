@@ -35,6 +35,7 @@ import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 
 import re
+from camxes import Camxes
 
 try:
     reload(jbovlaste)
@@ -49,6 +50,7 @@ class Makfa(callbacks.Plugin):
         self.__parent = super(Makfa, self)
         self.__parent.__init__(irc)
         self.db = jbovlaste.Dictionary('data/jbovlaste-en.xml')
+        self._camxes = Camxes()
 
     def unnest(self, irc, msg, args, command):
         """<command>
@@ -104,6 +106,16 @@ class Makfa(callbacks.Plugin):
     lastlojban = wrap(lastlojban, [optional('channel'),
                                    optional('seenNick'),
                                    optional('positiveInt')])
+
+    def camxes(self, irc, msg, args, text):
+        """<text>
+
+        Get the grammatical portion of text with camxes.
+        """
+        grammatical = self._camxes.parse(text)
+        result = grammatical + '\x0304' + text[len(grammatical):] + '\x03'
+        irc.reply(result)
+    camxes = wrap(camxes, ['text'])
 
 
 Class = Makfa

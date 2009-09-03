@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar data/lojban_peg_parser.jar "$*"
