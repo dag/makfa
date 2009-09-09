@@ -188,6 +188,30 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply("no types")
     type = wrap(type, ['text'])
 
+    def terminator(self, irc, msg, args, valsi):
+        """<entry> [entry...]
+
+        List terminators for entries.
+        """
+        if irc.nested:
+            L = [self.db[i].terminator()
+                 for i in valsi.split()
+                 if i in self.db and self.db[i].terminator()]
+            if L:
+                irc.reply(' '.join(L))
+        else:
+            L = ['{%s} %s' % (i, self.db[i].terminator())
+                 for i in valsi.split()
+                 if i in self.db and self.db[i].terminator()]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+            else:
+                irc.reply("no terminators")
+    terminator = wrap(terminator, ['text'])
+
     def find(self, irc, msg, args, opts, query):
         """[--{type,definition,notes,gloss} <value>] [--{rafsi,valsi,selmaho} <commalist>] [--shuffle] [--limit <value>] [--regexp] [--like <word>] [query]
 
