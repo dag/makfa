@@ -212,6 +212,31 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply("no terminators")
     terminator = wrap(terminator, ['text'])
 
+    def terminates(self, irc, msg, args, valsi):
+        """<entry> [entry...]
+
+        List selma'o terminated by entries.
+        """
+        if irc.nested:
+            L = [' '.join(self.db[i].terminates())
+                 for i in valsi.split()
+                 if i in self.db and self.db[i].terminates()]
+            if L:
+                irc.reply(' '.join(L))
+        else:
+            L = ['{%s} %s' % (i, ', '.join([i
+                                            for i in self.db[i].terminates()]))
+                 for i in valsi.split()
+                 if i in self.db and self.db[i].terminates()]
+            if L:
+                plural = 'entries'
+                if len(L) == 1:
+                    plural = 'entry'
+                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+            else:
+                irc.reply('no terminated')
+    terminates = wrap(terminates, ['text'])
+
     def find(self, irc, msg, args, opts, query):
         """[--{type,definition,notes,gloss} <value>] [--{rafsi,valsi,selmaho} <commalist>] [--shuffle] [--limit <value>] [--regexp] [--like <word>] [query]
 
