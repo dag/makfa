@@ -301,7 +301,7 @@ class Jbovlaste(callbacks.Plugin):
                             res = "%s of selma'o %s" % (res, entry.selmaho)
                         if entry.terminator():
                             terminator = entry.terminator()
-                            res = '%s with terminator %s' % (res, terminator)
+                            res = '%s terminated by %s' % (res, terminator)
                         if entry.terminates():
                             terminates = ', '.join(entry.terminates())
                             res = '%s terminating %s' % (res, terminates)
