@@ -66,10 +66,7 @@ class Jbovlaste(callbacks.Plugin):
                  for i in valsi.split()
                  if i in self.db and self.db[i].selmaho]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                irc.reply(_pluralize(L))
             else:
                 irc.reply("no selma'o")
     selmaho = wrap(selmaho, ['text'])
@@ -89,10 +86,7 @@ class Jbovlaste(callbacks.Plugin):
                                             for i in self.db[i].rafsi]))
                  for i in valsi.split() if i in self.db and self.db[i].rafsi]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                irc.reply(_pluralize(L))
             else:
                 irc.reply('no rafsi')
     rafsi = wrap(rafsi, ['text'])
@@ -110,10 +104,7 @@ class Jbovlaste(callbacks.Plugin):
             L = ['{%s} "%s"' % (i, self.db[i].definition.encode('utf-8'))
                  for i in valsi if i in self.db]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, ';  '.join(L)))
+                irc.reply(_pluralize(L, 2))
             else:
                 irc.reply('no definition')
     definition = wrap(definition, ['text'])
@@ -131,10 +122,7 @@ class Jbovlaste(callbacks.Plugin):
             L = ['{%s} "%s"' % (i, self.db[i].notes.encode('utf-8'))
                  for i in valsi if i in self.db and self.db[i].notes]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, ';  '.join(L)))
+                irc.reply(_pluralize(L, 2))
             else:
                 irc.reply('no notes')
     notes = wrap(notes, ['text'])
@@ -158,11 +146,7 @@ class Jbovlaste(callbacks.Plugin):
                                             for g in self.db[i].places[p]]))
                  for i in valsi if i in self.db and p in self.db[i].places]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                res = '%d %s: %s' % (len(L), plural, '; '.join(L))
-                irc.reply(res.encode('utf-8'))
+                irc.reply(_pluralize(L).encode('utf-8'))
             else:
                 irc.reply('no glosses')
     gloss = wrap(gloss, [getopts({'place': 'positiveInt'}), 'text'])
@@ -180,10 +164,7 @@ class Jbovlaste(callbacks.Plugin):
             L = ['{%s} %s' % (i, self.db[i].type)
                  for i in valsi.split() if i in self.db]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                irc.reply(_pluralize(L))
             else:
                 irc.reply("no types")
     type = wrap(type, ['text'])
@@ -204,10 +185,7 @@ class Jbovlaste(callbacks.Plugin):
                  for i in valsi.split()
                  if i in self.db and self.db[i].terminator()]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                irc.reply(_pluralize(L))
             else:
                 irc.reply("no terminators")
     terminator = wrap(terminator, ['text'])
@@ -229,10 +207,7 @@ class Jbovlaste(callbacks.Plugin):
                  for i in valsi.split()
                  if i in self.db and self.db[i].terminates()]
             if L:
-                plural = 'entries'
-                if len(L) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(L), plural, '; '.join(L)))
+                irc.reply(_pluralize(L))
             else:
                 irc.reply('no terminated')
     terminates = wrap(terminates, ['text'])
@@ -366,6 +341,15 @@ class Jbovlaste(callbacks.Plugin):
                     else:
                         irc.reply('no entry for {%s}' % valsi)
     show = wrap(show, [getopts({'no-results': ''}), optional('text')])
+
+
+def _pluralize(lst, spaces=1):
+    bind = ';' + ' ' * spaces
+    plural = 'entries'
+    entries = len(lst)
+    if entries == 1:
+        plural = 'entry'
+    return '%d %s: %s' % (entries, plural, bind.join(lst))
 
 
 Class = Jbovlaste
