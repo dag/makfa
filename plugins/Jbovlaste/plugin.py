@@ -242,18 +242,15 @@ class Jbovlaste(callbacks.Plugin):
         results = self.db.query(**args)
         if shuffle:
             random.shuffle(results)
+        if results and limit:
+            results = results[0:limit]
         if irc.nested:
             results = [i.replace(' ', '.') for i in results]
             if results:
-                if limit is None:
-                    irc.reply(' '.join(results))
-                else:
-                    irc.reply(' '.join(results[0:limit]))
+                irc.reply(' '.join(results))
             else:
                 irc.reply('--no-results')
         else:
-            if results and limit > 0:
-                results = results[0:limit]
             if results:
                 L = [unicode(self.db[i]) for i in results]
                 irc.reply(_pluralize(L).encode('utf-8'))
