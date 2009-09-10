@@ -217,49 +217,29 @@ class Jbovlaste(callbacks.Plugin):
 
         Search for entries in jbovlaste.
         """
-        type = definition = notes = gloss = like = None
-        rafsi = valsi = selmaho = []
-        shuffle = False
-        limit = None
-        regexp = False
+        args = {'type': None, 'definition': None, 'notes': None,
+                'gloss': None, 'like': None, 'limit': None,
+                'rafsi': [], 'valsi': [], 'selmaho': [],
+                'shuffle': False, 'regexp': False, 'query': query}
         for (key, val) in opts:
-            if key == 'type':
-                type = val
-            elif key == 'rafsi':
-                rafsi = val
-            elif key == 'selmaho':
-                selmaho = val
-            elif key == 'definition':
-                definition = val
-            elif key == 'notes':
-                notes = val
-            elif key == 'gloss':
-                gloss = val
-            elif key == 'valsi':
-                valsi = val
-            elif key == 'shuffle':
-                shuffle = val
-            elif key == 'limit':
-                limit = val
-            elif key == 'regexp':
-                regexp = val
-            elif key == 'like':
-                like = val
-        if not regexp:
+            if key in args:
+                args[key] = val
+        limit = args['limit']
+        shuffle = args['shuffle']
+        del args['limit']
+        del args['shuffle']
+        if not args['regexp']:
             L = []
-            [L.extend(i.split()) for i in rafsi]
-            rafsi = L
+            [L.extend(i.split()) for i in args['rafsi']]
+            args['rafsi'] = L
             L = []
-            [L.extend(i.split()) for i in selmaho]
-            selmaho = L
+            [L.extend(i.split()) for i in args['selmaho']]
+            args['selmaho'] = L
             L = []
-            [L.extend(i.split()) for i in valsi]
-            valsi = L
-            valsi = [i.replace('.', ' ') for i in valsi]
-        results = self.db.query(type=type, rafsi=rafsi, selmaho=selmaho,
-                                definition=definition, notes=notes,
-                                gloss=gloss, valsi=valsi, regexp=regexp,
-                                like=like, query=query)
+            [L.extend(i.split()) for i in args['valsi']]
+            args['valsi'] = L
+            args['valsi'] = [i.replace('.', ' ') for i in args['valsi']]
+        results = self.db.query(**args)
         if shuffle:
             random.shuffle(results)
         if irc.nested:
@@ -275,13 +255,8 @@ class Jbovlaste(callbacks.Plugin):
             if results and limit > 0:
                 results = results[0:limit]
             if results:
-                rep = '; '.join([unicode(self.db[i]) for i in results])
-                plural = 'entries'
-                if len(results) == 1:
-                    plural = 'entry'
-                irc.reply('%d %s: %s' % (len(results),
-                                         plural,
-                                         rep.encode('utf-8')))
+                L = [unicode(self.db[i]) for i in results]
+                irc.reply(_pluralize(L).encode('utf-8'))
             else:
                 irc.reply('no entries')
     find = wrap(find, [getopts({'type': 'text', 'rafsi': commalist('text'),
