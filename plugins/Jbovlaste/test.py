@@ -33,5 +33,10 @@ from supybot.test import *
 class JbovlasteTestCase(PluginTestCase):
     plugins = ('Jbovlaste',)
 
+    def testSelrafsi(self):
+        query = 'jbovlaste find --selrafsi makfa'
+        response = '2 entries: {mafcre} "wizard", "sorcerer"; {malmakfa} "black magic"'
+        self.assertResponse(query, response)
+
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:

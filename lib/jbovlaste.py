@@ -96,7 +96,8 @@ class Dictionary():
             self[word].places[place].append((valsi.get('word'), sense))
 
     def find(self, type=None, valsi=[], gloss=None, rafsi=[], like=None,
-              selmaho=[], definition=None, notes=None, regexp=False):
+             selmaho=[], definition=None, notes=None, selrafsi=None,
+             regexp=False):
         results = self._entries
         results = self._type(results, type, regexp)
         results = self._valsi(results, valsi, regexp)
@@ -105,17 +106,19 @@ class Dictionary():
         results = self._selmaho(results, selmaho, regexp)
         results = self._definition(results, definition)
         results = self._notes(results, notes)
+        results = self._selrafsi(results, selrafsi)
         if like:
             results.sort(_Damerau(like, results).cmp)
         return results
 
     def query(self, query=None, type=None, valsi=[], gloss=None,
               rafsi=[], selmaho=[], definition=None, notes=None,
-              regexp=False, like=None):
+              selrafsi=None, regexp=False, like=None):
         results = []
         args = {'gloss': gloss, 'valsi': valsi, 'rafsi': rafsi,
                 'selmaho': selmaho, 'definition': definition, 'like': like,
-                'notes': notes, 'regexp': regexp, 'type': type}
+                'notes': notes, 'selrafsi': selrafsi,
+                'regexp': regexp, 'type': type}
         if query:
             listargs = ['valsi', 'rafsi', 'selmaho']
             order = ['gloss', 'valsi', 'rafsi',
@@ -195,6 +198,12 @@ class Dictionary():
         return [i for i in inlist
                   if self[i].notes and
                      re.search(notes, self[i].notes, re.IGNORECASE)]
+
+    def _selrafsi(self, inlist, selrafsi):
+        if not selrafsi: return inlist
+        return [i for i in inlist
+                  if self[i].selrafsi and
+                     selrafsi in self[i].selrafsi]
 
     def _prettyplace(self, defn):
         def f(m):

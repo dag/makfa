@@ -213,12 +213,12 @@ class Jbovlaste(callbacks.Plugin):
     terminates = wrap(terminates, ['text'])
 
     def find(self, irc, msg, args, opts, query):
-        """[--{type,definition,notes,gloss} <value>] [--{rafsi,valsi,selmaho} <commalist>] [--shuffle] [--limit <value>] [--regexp] [--like <word>] [query]
+        """[--{type,definition,notes,gloss,selrafsi} <value>] [--{rafsi,valsi,selmaho} <commalist>] [--shuffle] [--limit <value>] [--regexp] [--like <word>] [query]
 
         Search for entries in jbovlaste.
         """
         args = {'type': None, 'definition': None, 'notes': None,
-                'gloss': None, 'like': None, 'limit': None,
+                'gloss': None, 'like': None, 'limit': None, 'selrafsi': None,
                 'rafsi': [], 'valsi': [], 'selmaho': [],
                 'shuffle': False, 'regexp': False, 'query': query}
         for (key, val) in opts:
@@ -258,7 +258,7 @@ class Jbovlaste(callbacks.Plugin):
                 irc.reply('no entries')
     find = wrap(find, [getopts({'type': 'text', 'rafsi': commalist('text'),
                                 'selmaho': commalist('text'),
-                                'definition': 'text',
+                                'definition': 'text', 'selrafsi': 'text',
                                 'notes': 'text', 'gloss': 'text',
                                 'valsi': commalist('text'), 'shuffle': '',
                                 'limit': 'positiveInt', 'regexp': '',
